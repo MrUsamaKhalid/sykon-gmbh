@@ -1,5 +1,28 @@
 # Working in this repo
 
+## Read first
+
+**`BRAIN.md`** is the project memory — current mode, locked decisions, open
+items, file map, session log. Read it before doing anything. When a decision
+gets made, record it there, not in chat.
+
+## CURRENT MODE: INTAKE — collect, do not analyse
+
+The user is uploading catalogue materials in batches, deliberately one at a
+time. For every batch:
+
+1. Save it under `intake/materials/<NN>-<short-name>/`
+2. Log it in `intake/INTAKE_LOG.md`
+3. Reply **"Got it."** plus one line on what landed
+4. **Stop**
+
+Do not analyse, summarise the contents, extract data, critique, or start
+building. Analysis begins **only** when the user says **"Analyze now"**.
+
+This is written down because the failure mode is being helpful too early —
+processing an upload the user is not ready to discuss breaks their flow. When
+in doubt during intake, say less.
+
 ## The one thing to get right
 
 This is **Sykon ABS GmbH** — Sykon Aluminium Building Systems, German aluminium
