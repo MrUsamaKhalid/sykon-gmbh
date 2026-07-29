@@ -11,10 +11,12 @@ Do not import Sykon Properties assets, colours or type into this system.
   /* --- brand colour ------------------------------------------------- */
   --sy-red: #C11720;
   --sy-red-hover: #DC1A25;
+  --sy-red-on-dark: #DC1A25;
   --sy-red-tint-29: #ECB4B7;
   --sy-red-tint-17: #F4CED0;
   --sy-red-tint-12: #F7D9DB;
   --sy-ink: #1C1C1A;
+  --sy-page: #FFFFFF;
   --sy-paper: #FEF4F4;
   --sy-paper-warm: #F1E9E8;
   --sy-surface-cool: #F2F2F2;

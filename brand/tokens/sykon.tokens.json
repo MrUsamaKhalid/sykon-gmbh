@@ -21,6 +21,13 @@
       "derived_from": "red",
       "contrast": { "on_paper": 4.61, "on_ink": 3.43 }
     },
+    "red-on-dark": {
+      "value": "#DC1A25",
+      "role": "LARGE display type on a dark ground, and nothing else. The brand red measures 2.77:1 on ink — below even the 3:1 large-text threshold — so a red product name on the masthead is illegible by the standard. This is the minimum lift that clears 3:1 (3.43:1) while still reading as the brand red. Never use it for body copy on dark: no red in this family reaches 4.5:1 on ink without turning pink and failing on light.",
+      "derived_from": "red",
+      "contrast": { "on_ink": 3.43 },
+      "min_size_pt": 18
+    },
     "red-tint-29": {
       "value": "#ECB4B7",
       "role": "Chevron echo, near layer. 29% red over paper.",
@@ -41,6 +48,10 @@
     "ink": {
       "value": "#1C1C1A",
       "role": "Secondary. Type on light grounds, and the dark ground itself. Zero drift across 16 uses on 10 pages — the one value in the book that needed no reconciliation."
+    },
+    "page": {
+      "value": "#FFFFFF",
+      "role": "The catalogue page ground. White, per client direction. Distinct from `paper` because that token also carries light type on dark grounds, where pure white is off-brand."
     },
     "paper": {
       "value": "#FEF4F4",

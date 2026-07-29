@@ -13,10 +13,12 @@ export default {
         sykon: {
           "red": "#C11720",
           "red-hover": "#DC1A25",
+          "red-on-dark": "#DC1A25",
           "red-tint-29": "#ECB4B7",
           "red-tint-17": "#F4CED0",
           "red-tint-12": "#F7D9DB",
           "ink": "#1C1C1A",
+          "page": "#FFFFFF",
           "paper": "#FEF4F4",
           "paper-warm": "#F1E9E8",
           "surface-cool": "#F2F2F2",

@@ -132,6 +132,9 @@ Source of truth for the brand: `MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf`,
 | Wordmark type | Swiss 721 BT Black Extended, **outlined SVG only** | Commercial Bitstream face. Never vendored, never live text |
 | Text type | Hanken Grotesk (OFL) | Vendored as variable woff2 with licence |
 | Page format | A4 portrait, 210×297mm | Matches the master's catalogue mockup |
+| Page ground | `#FFFFFF` (`color.page`) | Client direction. `paper` keeps its other role — light type on dark is still `#F1E9E8` |
+| Red on dark | `color.red-on-dark` `#DC1A25` | Brand red is 2.77:1 on ink, below even 3:1. This is the minimum lift clearing it. LARGE display only |
+| Sample figures | **Layout only** | Its numbers are illustrative and mostly absent from the `.docx`. See `catalogue/references/SOURCE_AUDIT.md` |
 | Language | English only | Structured so Arabic is additive later |
 | Outputs | Print (216×303mm, 3mm bleed, crop marks) + digital (trimmed) | |
 | Print colour specs | Reference values, marked unverified | The master contains **no** CMYK, Pantone or ICC data at all |
@@ -164,7 +167,10 @@ Source of truth for the brand: `MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf`,
 
 Waiting on the user:
 
-- [ ] **1-pager reference sheets** — its layout is provisional until matched
+- [ ] **S60 sheet sign-off** — then scale the template to the other nine
+- [ ] **S50 and SL350 have zero artwork** — cannot produce a sheet until renders exist
+- [ ] **Unresolved author queries** in SL20 (§2 water result) and S77 (§16 limitations)
+      — must be settled before those systems publish. See `catalogue/references/SOURCE_AUDIT.md`
 - [ ] **Full catalogue file** — real content and system data
 - [ ] **Artwork** — profile renders, section drawings, application photography,
       certification marks (PIV, ift Rosenheim, A|U|F)
@@ -190,7 +196,9 @@ Waiting on the user:
 | Logo SVGs (8) | Done — 98.1% shape overlap vs original artwork |
 | Pattern SVGs | Done |
 | Fonts | Done |
-| Catalogue engine + verifier | Done — both examples build and pass all checks |
+| Catalogue engine + verifier | Done — all examples build and pass all checks |
+| **S60 product spec sheet** | **Done** — reproduces the sample layout, all figures from the `.docx` |
+| Typology symbols | 53 named + normalised to `brand/assets/typologies/` |
 | Repo skill + references | Done |
 | Living docs site (`brand/docs/index.html`) | **Not built yet** |
 | Real content wired in | Blocked on uploads |
