@@ -1,0 +1,155 @@
+{
+  "$schema": "./tokens.schema.json",
+  "$meta": {
+    "brand": "Sykon Aluminium Building Systems",
+    "entity": "Sykon ABS GmbH",
+    "tagline": "German Engineering System Since 1967",
+    "source": "MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf (34pp, Adobe Illustrator 30.1)",
+    "notice": "NOT Sykon Properties. That is a separate brand with a monochrome editorial identity in Inter. Never mix assets, palettes, type or voice between the two.",
+    "generated_by": "brand/tokens/build.mjs — edit this file, never edit brand/dist/"
+  },
+
+  "color": {
+    "red": {
+      "value": "#C11720",
+      "role": "THE brand red. Palette page p6, the p8 colourway grid, and the measured value of every application mockup in the book.",
+      "contrast": { "on_paper": 5.71, "on_ink": 2.77 }
+    },
+    "red-hover": {
+      "value": "#DC1A25",
+      "role": "Derived interactive lift (HSL L+6, hue and saturation held). Hover/active states on light surfaces only.",
+      "derived_from": "red",
+      "contrast": { "on_paper": 4.61, "on_ink": 3.43 }
+    },
+    "red-tint-29": {
+      "value": "#ECB4B7",
+      "role": "Chevron echo, near layer. 29% red over paper.",
+      "derived_from": "red"
+    },
+    "red-tint-17": {
+      "value": "#F4CED0",
+      "role": "Chevron echo, far layer. 17% red over paper.",
+      "derived_from": "red"
+    },
+    "red-tint-12": {
+      "value": "#F7D9DB",
+      "role": "Product 'spot' disc behind profile renders. 12% red over paper.",
+      "derived_from": "red"
+    },
+    "ink": {
+      "value": "#1C1C1A",
+      "role": "Secondary. Type on light grounds, and the dark ground itself. Zero drift across 16 uses on 10 pages — the one value in the book that needed no reconciliation."
+    },
+    "paper": {
+      "value": "#FEF4F4",
+      "role": "The real light ground. Most-used near-white in the book (8 instances). Default page background."
+    },
+    "paper-warm": {
+      "value": "#F1E9E8",
+      "role": "BG WARM. Panels and cards on light grounds, AND the colour of light type set on red or ink — never pure white.",
+      "contrast": { "on_red": 5.15, "on_ink": 14.9 }
+    },
+    "surface-cool": {
+      "value": "#F2F2F2",
+      "role": "Neutral light surface. Collapses the stray near-whites (#FEF6F5, #FFFBFA, #FDF3F3, #FFF7F7, #F2EAEA, #EAE4E4, #F3E8E8) that appear unmanaged in the source."
+    },
+    "paper-cool": {
+      "value": "#E0E0E1",
+      "role": "BG COOL. Declared on the palette page but used nowhere in the book. Assigned here to technical drawing grounds and disabled UI states so it has an actual job."
+    }
+  },
+
+  "doc": {
+    "$warning": "NON-BRAND NAMESPACE. These values must never appear on a brand surface. build.mjs lints for this.",
+    "grid-line": {
+      "value": "#E10916",
+      "role": "Construction and anatomy artwork only — 0.5pt guide rules on logo spec sheets. This is the diagram red that leaked into pp.4, 5, 9 of the source book, where it was mistakenly used as the brand red. Pages 4, 5 and 9 are off-spec and should be corrected to color.red."
+    }
+  },
+
+  "type": {
+    "wordmark": {
+      "family": "Swiss 721 BT Black Extended",
+      "role": "The wordmark, and nothing else. Never a heading, never body, never live text.",
+      "licence": "Commercial (Bitstream). Not licensed for web here — the wordmark ships exclusively as outlined SVG, so the face is never required at runtime.",
+      "tracking": "-40/1000 em base, with per-glyph exceptions measured from the artwork. Reproduced exactly in the generated SVGs; listed in DESIGN.md for anyone rebuilding from scratch.",
+      "leading": 1.203
+    },
+    "text": {
+      "family": "Hanken Grotesk",
+      "fallback": ["Helvetica Neue", "Arial", "sans-serif"],
+      "licence": "SIL Open Font License 1.1 — free to self-host and embed.",
+      "features": { "liga": 1, "kern": 1 },
+      "note": "Ligatures must stay on. The source body copy ships ligated fi/fl/ffi; disabling them visibly changes 'profile', 'fluid', 'flow' and 'certifications' — words this brand uses constantly."
+    },
+    "weight": {
+      "light":   { "value": 300, "role": "Oversized display copy and metadata captions" },
+      "regular": { "value": 400, "role": "Body and UI — the default" },
+      "medium":  { "value": 500, "role": "Headings, labels, table headers, buttons" },
+      "bold":    { "value": 700, "role": "Inline emphasis only" }
+    },
+    "leading": {
+      "display": 1.356,
+      "body": 1.585,
+      "caption": 1.355,
+      "tight": 0.848
+    },
+    "tracking": {
+      "none": "0",
+      "caps-label": "0.06em",
+      "caps-display": "0.02em"
+    }
+  },
+
+  "symbol": {
+    "viewBox": "0 0 225.679 100",
+    "aspect": 2.2568,
+    "path": "M125.777 0 L125.777 17.903 L140.590 17.903 L101.356 43.631 L61.419 17.903 L75.982 17.903 L75.982 0 L0 0 L0 17.903 L25.970 17.903 L83.962 54.879 L17.553 98.669 L17.970 100 L49.981 100 L174.727 17.903 L225.679 17.903 L225.679 0 Z",
+    "module": {
+      "t": 0.17903,
+      "role": "Bar thickness as a fraction of symbol height. The spacing module the source book never defines."
+    },
+    "bar_thickness": 0.17903,
+    "diagonal_thickness": 0.1903,
+    "clear_space": "1.5t",
+    "min_height_print_mm": 12,
+    "min_height_screen_px": 34,
+    "min_lockup_height_print_mm": 16,
+    "min_lockup_height_screen_px": 46,
+    "notes": [
+      "One closed 17-vertex straight-line polygon. No curves anywhere. Verified byte-identical across two independent instances (p8 lockup at 250x110.777pt, p9 construction at 541.21x239.815pt).",
+      "Deliberately NOT monoline: diagonals are 6.3% thicker than the horizontal bars (0.1903 vs 0.17903 of height). An equal-weight rebuild reads wrong.",
+      "The p5 instance is a hand-squashed defect — every X byte-identical to p4, every Y multiplied by 0.98337, making it 1.66% short. Never trace it.",
+      "The five diagonal edges run 32.52-33.40 degrees, a 0.88 degree spread, and the fork is asymmetric. Geometry is frozen exactly as drawn. Regularising to a clean 33.69 degrees (2:3 slope) would mean redrawing the logo — a decision for the brand owner, not this system.",
+      "Aspect is locked. Any component API must expose an aspect-locked box, never independent width and height."
+    ]
+  },
+
+  "space": {
+    "margin-mm": 16,
+    "bleed-mm": 3,
+    "gutter-mm": 6,
+    "scale": [2, 4, 6, 8, 12, 16, 24, 32, 48, 64]
+  },
+
+  "radius": {
+    "control": {
+      "value": "0.20em-of-height",
+      "role": "Interactive controls. 0.18-0.22 x control height, measured from the book (~8-10px on a 44px control)."
+    },
+    "pill": {
+      "value": "9999px",
+      "role": "RESERVED. The non-interactive eyebrow tag only. Never a button."
+    },
+    "circle": {
+      "value": "50%",
+      "role": "RESERVED. The floating action button, and the product 'spot' disc."
+    }
+  },
+
+  "page": {
+    "a4-portrait": { "width_mm": 210, "height_mm": 297 },
+    "print_dpi": 300,
+    "screen_dpi": 144
+  }
+}

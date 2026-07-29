@@ -1,0 +1,103 @@
+/*
+Sykon ABS GmbH design tokens — GENERATED, DO NOT EDIT.
+Source: brand/tokens/sykon.tokens.json
+Rebuild: node brand/tokens/build.mjs
+
+Sykon Aluminium Building Systems is NOT Sykon Properties.
+Do not import Sykon Properties assets, colours or type into this system.
+*/
+
+:root {
+  /* --- brand colour ------------------------------------------------- */
+  --sy-red: #C11720;
+  --sy-red-hover: #DC1A25;
+  --sy-red-tint-29: #ECB4B7;
+  --sy-red-tint-17: #F4CED0;
+  --sy-red-tint-12: #F7D9DB;
+  --sy-ink: #1C1C1A;
+  --sy-paper: #FEF4F4;
+  --sy-paper-warm: #F1E9E8;
+  --sy-surface-cool: #F2F2F2;
+  --sy-paper-cool: #E0E0E1;
+
+  /* --- non-brand: construction/anatomy artwork ONLY ------------------
+     Never use these on a brand surface. See tokens.doc.$warning.       */
+  --sy-doc-grid-line: #E10916;
+
+  /* --- type ---------------------------------------------------------- */
+  --sy-font-text: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --sy-weight-light: 300;
+  --sy-weight-regular: 400;
+  --sy-weight-medium: 500;
+  --sy-weight-bold: 700;
+  --sy-leading-display: 1.356;
+  --sy-leading-body: 1.585;
+  --sy-leading-caption: 1.355;
+  --sy-leading-tight: 0.848;
+  --sy-tracking-none: 0;
+  --sy-tracking-caps-label: 0.06em;
+  --sy-tracking-caps-display: 0.02em;
+
+  /* --- space --------------------------------------------------------- */
+  --sy-margin: 16mm;
+  --sy-bleed: 3mm;
+  --sy-gutter: 6mm;
+  --sy-space-2: 2mm;
+  --sy-space-4: 4mm;
+  --sy-space-6: 6mm;
+  --sy-space-8: 8mm;
+  --sy-space-12: 12mm;
+  --sy-space-16: 16mm;
+  --sy-space-24: 24mm;
+  --sy-space-32: 32mm;
+  --sy-space-48: 48mm;
+  --sy-space-64: 64mm;
+
+  /* --- radius -------------------------------------------------------- */
+  --sy-radius-pill: 9999px;
+  --sy-radius-circle: 50%;
+}
+
+/* Ligatures stay on. The brand's own copy relies on them —
+   "profile", "fluid", "flow", "certifications". */
+.sy-text {
+  font-family: var(--sy-font-text);
+  font-feature-settings: "liga" 1, "kern" 1;
+  font-weight: var(--sy-weight-regular);
+  line-height: var(--sy-leading-body);
+  color: var(--sy-ink);
+}
+
+/* Buttons — the book sanctions exactly two. No ghost/outline variant exists. */
+.sy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 9px; /* 0.20 x 44px control height */
+  font-family: var(--sy-font-text);
+  font-weight: var(--sy-weight-medium);
+  font-size: 15px;
+  cursor: pointer;
+}
+.sy-btn--primary { background: var(--sy-red); color: var(--sy-paper-warm); }
+.sy-btn--primary:hover { background: var(--sy-red-hover); }
+.sy-btn--secondary { background: #fff; color: var(--sy-ink); }
+
+/* RESERVED shape. Not a button — the eyebrow tag and nothing else. */
+.sy-tag {
+  display: inline-block;
+  border-radius: var(--sy-radius-pill);
+  background: var(--sy-red-tint-17);
+  color: var(--sy-red);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: var(--sy-weight-medium);
+}
+
+/* Dark sections. Red is a graphic fill here, never type — it measures
+   2.77:1 on ink, below even the large-text threshold. */
+.sy-on-ink { background: var(--sy-ink); color: var(--sy-paper); }
+.sy-on-red { background: var(--sy-red); color: var(--sy-paper-warm); }

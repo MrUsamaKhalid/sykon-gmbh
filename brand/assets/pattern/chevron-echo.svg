@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.6738 100.3253" role="img" aria-label="Sykon chevron with echo offsets">
+  <title>Sykon chevron with echo offsets</title>
+  <g transform="translate(-9.5739 -5.2656)">
+  <polyline points="8.9515,8.9515 63.9515,8.9515 108.9515,38.6235 28.9515,91.3738" fill="none" stroke="#F4CED0" stroke-width="17.9030" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>
+  </g>
+  <g transform="translate(-4.7870 -2.6328)">
+  <polyline points="8.9515,8.9515 63.9515,8.9515 108.9515,38.6235 28.9515,91.3738" fill="none" stroke="#ECB4B7" stroke-width="17.9030" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>
+  </g>
+  <polyline points="8.9515,8.9515 63.9515,8.9515 108.9515,38.6235 28.9515,91.3738" fill="none" stroke="#C11720" stroke-width="17.9030" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/>
+</svg>
