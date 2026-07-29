@@ -31,6 +31,7 @@ For each batch:
 | 04 | 2026-07-29 | Drawings — Batch B | 10 | Sample boards, 20MB. No overlap with A; A+B = 21 |
 | 05 | 2026-07-29 | Performance icons | 9 | PNG, 4.1MB |
 | 06 | 2026-07-29 | Typologies | 53 | SVG in A/B/C sets, 3.1MB (+1 redundant zip) |
+| 07 | 2026-07-29 | References — sample, background, portfolio, old brochure | 5 | 26MB. **Intake closed here** |
 
 ---
 
@@ -194,6 +195,22 @@ Notes for analysis, not resolved now:
 
 Not opened. Contents unexamined pending "Analyze now".
 
+### Batch 07 — References  *(final batch — intake closed)*
+
+`intake/materials/07-references/` — 5 PDFs, 26MB.
+
+| File | Pages | Size | Role |
+|---|---|---|---|
+| `SAMPLE__USE_THIS.pdf` | 1 | 210×297mm | **The target layout.** A per-system product spec sheet for "Superior S60" |
+| `Syko_GmbH__Concept__Catalogue_Simplified.pdf` | 1 | 210×297mm | **Byte-identical to the sample** — same file, two names |
+| `SAMPLE_BACKGROUND__USE_THIS_AS_BACKGROUND.pdf` | 1 | 210×297mm | The same page with content stripped — the reusable shell |
+| `Sykon_Portfolio.pdf` | 80 | 210×297mm | Company copy, completed projects, certification claims |
+| `OLD__Sykon_brochure_compressed.pdf` | 14 | 216×303mm | A4 + 3mm bleed. The document this work supersedes |
+
+The sample's own icons are **placeholders** — three 107×107px images repeated
+across all 8 typology slots and the spec rows. The real icons are batches 05
+and 06.
+
 ### PARKED — SY Families (`.rfa` / `.rvt`)
 
 ~19 Revit files, ~347MB total. Not uploaded, deliberately. Revisit later.
@@ -224,6 +241,25 @@ Unresolved. Ask before acting on either.
 
 ## Analysis
 
-Populated only after **"Analyze now"**.
+**Authorised 2026-07-29.** Intake closed at batch 07.
 
-*(not started)*
+### Direction confirmed by the user
+
+| Question | Answer |
+|---|---|
+| Scope | **S60 first**, approve the template, then scale to the other nine |
+| Fidelity | **Match the sample as closely as it can be measured** |
+| Typology naming | Name them from the drawings themselves |
+| Portfolio + old brochure | All four roles: mine for copy, treat as superseded, source a projects page, and cross-check for factual conflicts |
+
+### Correction to the record
+
+The user expected the typology SVGs to carry names internally. They do not —
+there is no `<title>`, `<desc>` or `<text>` in any of the 53, only Illustrator
+UUID ids. Naming therefore has to come from reading the drawings, which is
+workable because architectural opening symbols encode the typology visually
+(hinge side, fold lines, direction arrows).
+
+### Findings
+
+*Analysis in progress.*
