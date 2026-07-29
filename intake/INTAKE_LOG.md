@@ -24,7 +24,8 @@ For each batch:
 
 | # | Received | Name | Files | Notes |
 |---|---|---|---|---|
-| — | — | *(none yet)* | — | Awaiting first upload |
+| 01 | 2026-07-29 | Catalogue materials — system .docx | 10 | Per-system source content, 15MB |
+| 02 | — | *(expected)* SY Families | — | `.rfa` and `.rvt` — Revit family + project files |
 
 ---
 
@@ -33,7 +34,30 @@ For each batch:
 <!-- One block per batch. Record what it is and where it went. Nothing more
      until analysis is authorised. -->
 
-*(empty)*
+### Batch 01 — Catalogue materials (system .docx)
+
+`intake/materials/01-catalogue-materials/` — 10 files, 15MB, from
+`Sykon_ABS_Catalogues.zip`. One Word document per system:
+
+| File | System |
+|---|---|
+| `S 50 Non thermal   Catalogue material_.docx` | S 50 non-thermal |
+| `S60  Catalogue material_.docx` | S 60 |
+| `S77 folding   Catalogue material_.docx` | S 77 folding |
+| `SL 20 panoramic Catalogue material_.docx` | SL 20 panoramic |
+| `SL 350 non thermal Catalogue material_.docx` | SL 350 non-thermal |
+| `SL 450 Lift and slide Catalogue material_.docx` | SL 450 lift-and-slide |
+| `SL 450 S Catalogue material_.docx` | SL 450 S |
+| `SL 580 Catalogue material_.docx` | SL 580 |
+| `SY 35 Catalogue material_.docx` | SY 35 |
+| `SY 50 Catalogue material_.docx` | SY 50 |
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 02 — SY Families (expected, not yet received)
+
+`.rfa` (Revit families) and `.rvt` (Revit projects). Announced by the user as
+the next upload.
 
 ---
 

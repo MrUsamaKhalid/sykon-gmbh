@@ -3,3 +3,8 @@
 *.pyc
 __pycache__/
 node_modules/
+
+# Intake materials are source input, not repo content.
+# Logged in intake/INTAKE_LOG.md; the files themselves stay local.
+intake/materials/*
+!intake/materials/.gitkeep
