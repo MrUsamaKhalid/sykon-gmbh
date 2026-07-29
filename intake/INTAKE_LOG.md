@@ -27,6 +27,8 @@ For each batch:
 | 01 | 2026-07-29 | Catalogue materials — system .docx | 10 | Per-system source content, 15MB |
 | — | 2026-07-29 | SY Families (`.rfa` / `.rvt`) | ~19 | **PARKED** — not uploaded. See below |
 | 02 | 2026-07-29 | PDF views — per-system drawings | 22 | Numbered 000–020, 14MB |
+| 03 | 2026-07-29 | Drawings — Batch A | 11 | Sample boards, 19MB. Batch B to follow |
+| 04 | 2026-07-29 | Drawings — Batch B | 10 | Sample boards, 20MB. No overlap with A; A+B = 21 |
 
 ---
 
@@ -84,6 +86,59 @@ Not opened. Contents unexamined pending "Analyze now".
 
 Two files share the number `002` — one is a `_compressed` variant of the same
 view. Flag at analysis; do not resolve now.
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 03 — Drawings, Batch A
+
+`intake/materials/03-drawings-batch-a/` — 11 PDFs, 19MB, from
+`Drawings_Batch_A.zip`. Sample boards and detail drawings.
+
+| File | System |
+|---|---|
+| `LS450S Sample Board rev01.pdf` | LS 450 S — note the "LS" prefix; elsewhere it is "SL 450 S" |
+| `S60 Casement Door A1 Sample Board.pdf` | S 60 |
+| `S60 Casement Window A1 Sample Board.pdf` | S 60 |
+| `S60 Hinged Door Swing Out 8+16+8.pdf` | S 60 |
+| `S60 Open-In Overlap Sample Board rev01.pdf` | S 60 |
+| `S60 TT Sample Board rev01.pdf` | S 60 — TT presumably tilt-and-turn |
+| `SL20 Panoramic Slim Sliders Exposed Sides (20260311).pdf` | SL 20 |
+| `SL20 Panoramic Slim Sliders Exposed Sides 02 (20260312).pdf` | SL 20 |
+| `SL20 Panoramic Slim Sliders Exposed Sides 03 (20260316).pdf` | SL 20 |
+| `SL20 Panoramic Slim Sliders Generic Board.pdf` | SL 20 |
+| `SL20 Sample Board.pdf` | SL 20 |
+
+Noted for analysis, not resolved now:
+- `LS450S` vs `SL 450 S` — prefix inconsistency across batches
+- Three dated SL20 "Exposed Sides" files (0311 / 0312 / 0316) look like
+  revisions of one drawing; latest is presumably authoritative
+- `rev01` suffixes appear on some boards and not others
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 04 — Drawings, Batch B
+
+`intake/materials/04-drawings-batch-b/` — 10 PDFs, 20MB, from
+`Drawings_Batch_B.zip`. Continues the sample-board set from Batch A.
+
+| File | System |
+|---|---|
+| `SL450 Lift & Slide Board A1.pdf` | SL 450 |
+| `SL450 Monorail Slide Only Board A1.pdf` | SL 450 |
+| `SL450S A1 Sample Board.pdf` | SL 450 S |
+| `SL450S Monorail Board A1.pdf` | SL 450 S |
+| `SL580 Heavy Duty Sliders Generic.pdf` | SL 580 |
+| `SL580 Monorail L&S Details.pdf` | SL 580 |
+| `SL580 Monorail Sliders Generic.pdf` | SL 580 |
+| `SY35 Slim SCW Generic Board.pdf` | SY 35 — SCW presumably structural curtain wall |
+| `SY50 Sample Board.pdf` | SY 50 |
+| `SY50 with Vent Toggle Glazed 8+16+8.pdf` | SY 50 |
+
+**Verified: zero filename overlap with Batch A.** A + B together are the
+complete 21-file drawing set, matching the user's screenshot.
+
+Note for analysis: `SL450S A1 Sample Board` here vs `LS450S Sample Board rev01`
+in Batch A — same system, different prefix and revision marker. Resolve later.
 
 Not opened. Contents unexamined pending "Analyze now".
 
