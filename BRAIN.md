@@ -125,6 +125,10 @@ non-thermal, SL450 lift-and-slide, SL450S, SL580, SY35, SY50.
 | `catalogue/examples/` | `extended.example.json`, `onepager.example.json` |
 | `tools/build_logos.py` | Regenerates logo SVGs from the brand master PDF |
 | `tools/build_patterns.py` | Regenerates pattern SVGs |
+| `tools/organise_systems.py` | Rebuilds `systems/` from `intake/materials/` |
+| `systems/<SYSTEM>/` | Per system: `source/ views/ drawings/ extracted/ content/` |
+| `systems/_COVERAGE.md` | **What each system has and what it is missing** |
+| `systems/_shared/` | Range-wide artwork that belongs to no single system |
 | `.claude/skills/sykon-gmbh-catalogue/` | Repo-local skill |
 
 Source of truth for the brand: `MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf`,
@@ -231,3 +235,8 @@ Newest last. One line per meaningful event.
   under AA. Both fixed.
 - Entered INTAKE MODE at the user's request — collecting catalogue materials in
   batches, analysis deferred until "Analyze now".
+- Built `systems/` — one folder per system holding its `.docx`, drawing sheets,
+  sample boards and extracted artwork, plus `_COVERAGE.md` saying what each is
+  missing. 16/16 3D quadrant renders now land in the right system; `SL20` and
+  `SL450` were being dropped by a caption minimum-length guard. Confirmed **S50
+  and SL350 have no artwork anywhere in intake** — not a matching failure.

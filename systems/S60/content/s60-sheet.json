@@ -1,0 +1,80 @@
+{
+  "slug": "Sykon-S60-Spec-Sheet",
+  "system": "S60",
+  "title": "SYKON S60 — Casement / Door System",
+
+  "_rule": "Every printed string below is quoted from intake/materials/01-catalogue-materials/S60  Catalogue material_.docx, the only source of fact. Section headings come from SAMPLE__USE_THIS.pdf, which supplies DESIGN only. The contact line is approved brand furniture. All three categories are enforced by tools/check_provenance.py, which fails the build on anything else.",
+  "_sections": "system_name §Heading 1 · overview §1 · chips §5 · specs §5 · performance §2 and §3 and §4 · typologies §16 System Options · segments §17 Area of Usage",
+
+  "pages": [
+    {
+      "block": "sheet",
+      "system_name": "SYKON| S60",
+      "system_subtitle": "Casement / Door System",
+      "hero": "s60-hero.png",
+
+      "chips": [
+        { "value": "60 mm", "note": "System depth" },
+        { "value": "Aluminium", "note": "Frame material" },
+        { "value": "24 mm / 28 mm", "note": "Tested glass thickness" },
+        { "value": "EPDM gaskets", "note": "Sealing system" }
+      ],
+
+      "overview_title": "Product Overview",
+      "overview": "S60 is a 60 mm aluminium casement system.",
+      "overview_list_title": "The system includes:",
+      "overview_list": [
+        "Casement windows (inward and outward opening)",
+        "Hinged doors",
+        "Concealed sash configurations",
+        "Co-planar door configurations"
+      ],
+
+      "specs_title": "Technical Specifications",
+      "specs": [
+        { "label": "System type", "value": "Casement / hinged door system" },
+        { "label": "System depth", "value": "60 mm" },
+        { "label": "Frame material", "value": "Aluminium" },
+        { "label": "Thermal construction", "value": "Aluminium composite profiles" },
+        { "label": "Glazing type", "value": "Double glazing" },
+        { "label": "Tested glass thickness", "value": "24 mm / 28 mm" },
+        { "label": "Sealing system", "value": "EPDM gaskets" }
+      ],
+
+      "performance_title": "Tested Performance",
+      "performance": [
+        { "label": "Air permeability — EN 12207", "value": "Class 4" },
+        { "label": "Water tightness — EN 12208", "value": "Class 7A / Class 3A" },
+        { "label": "Wind resistance — EN 12210", "value": "Class C3" },
+        { "label": "Air infiltration — ASTM E283", "value": "Within 2.5 m³/h·m² @ 75 Pa" },
+        { "label": "Static water penetration — ASTM E331", "value": "600 Pa (no water ingress)" },
+        { "label": "Wind resistance – serviceability — ASTM E330", "value": "+1400 Pa / +1920 Pa" },
+        { "label": "Wind resistance – safety — ASTM E330", "value": "+2100 Pa / +2880 Pa" },
+        { "label": "Sample type", "value": "Hinged door" },
+        { "label": "Sample size", "value": "1000 × 2300 mm" }
+      ],
+
+      "typologies_title": "System Options",
+      "typologies": [
+        { "name": "Inward opening" },
+        { "name": "Outward opening" },
+        { "name": "Concealed sash" },
+        { "name": "Co-planar doors" },
+        { "name": "Storefront and entrance configurations" },
+        { "name": "Tilt & Turn" },
+        { "name": "Pull & Slide" },
+        { "name": "Structural Glazed Door" }
+      ],
+
+      "segments_title": "Area of Usage",
+      "segments": [
+        { "title": "Residential buildings" },
+        { "title": "Commercial buildings" },
+        { "title": "Entrance doors" },
+        { "title": "Window applications" }
+      ],
+
+      "contact": "www.sykon.ae  |  info@sykon.ae"
+    }
+  ]
+}
