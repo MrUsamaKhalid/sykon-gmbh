@@ -1,0 +1,233 @@
+{
+  "SL450S": {
+    "designation": "SL450S",
+    "desc": "Thermal break sliding",
+    "source": [
+      "SL 450 S Catalogue material_.docx"
+    ],
+    "views": [
+      "007-SL450s 2 Panel Sliding with Flyscreen.pdf",
+      "008-SL450s 3 Track Sliding Door.pdf",
+      "009-SL450s Monorail with Flyscreen Sliding Door.pdf"
+    ],
+    "drawings": [
+      "LS450S Sample Board rev01.pdf",
+      "SL450S A1 Sample Board.pdf",
+      "SL450S Monorail Board A1.pdf"
+    ],
+    "extracted": 26,
+    "content": null,
+    "quadrants": [
+      "SL450s 2 Panel Sliding with Flyscreen",
+      "SL450s 3 Track Sliding Door",
+      "SL450s Monorail with Flyscreen Sliding Door"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SL350": {
+    "designation": "SL350",
+    "desc": "Sliding, non-thermal",
+    "source": [
+      "SL 350 non thermal Catalogue material_.docx"
+    ],
+    "views": [],
+    "drawings": [],
+    "extracted": 0,
+    "content": null,
+    "quadrants": [],
+    "missing": [
+      "**drawing sheets** \u2014 no elevations, no 3D view, no section details",
+      "**sample boards** \u2014 no large-format section board",
+      "**extracted artwork** \u2014 nothing to place on a sheet",
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SL450": {
+    "designation": "SL450",
+    "desc": "Standard sliding / lift & slide",
+    "source": [
+      "SL 450 Lift and slide Catalogue material_.docx"
+    ],
+    "views": [
+      "006-SL450.pdf"
+    ],
+    "drawings": [
+      "SL450 Lift & Slide Board A1.pdf",
+      "SL450 Monorail Slide Only Board A1.pdf"
+    ],
+    "extracted": 9,
+    "content": null,
+    "quadrants": [
+      "SL450"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SL580": {
+    "designation": "SL580",
+    "desc": "Thermal sliding",
+    "source": [
+      "SL 580 Catalogue material_.docx"
+    ],
+    "views": [
+      "010-SL580 2 Panel Narrow Sliding Door.pdf",
+      "011-SL580 2 Panel Sliding with Flyscreen.pdf",
+      "012-SL580 Monorail Sliding Door.pdf"
+    ],
+    "drawings": [
+      "SL580 Heavy Duty Sliders Generic.pdf",
+      "SL580 Monorail L&S Details.pdf",
+      "SL580 Monorail Sliders Generic.pdf"
+    ],
+    "extracted": 27,
+    "content": null,
+    "quadrants": [
+      "SL580 2 Panel Narrow Sliding Door",
+      "SL580 2 Panel Sliding with Flyscreen",
+      "SL580 Monorail Sliding Door"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SL20": {
+    "designation": "SL20",
+    "desc": "Minimal panoramic sliding",
+    "source": [
+      "SL 20 panoramic Catalogue material_.docx"
+    ],
+    "views": [
+      "005-SL20.pdf"
+    ],
+    "drawings": [
+      "SL20 Panoramic Slim Sliders Exposed Sides (20260311).pdf",
+      "SL20 Panoramic Slim Sliders Exposed Sides 02 (20260312).pdf",
+      "SL20 Panoramic Slim Sliders Exposed Sides 03 (20260316).pdf",
+      "SL20 Panoramic Slim Sliders Generic Board.pdf",
+      "SL20 Sample Board.pdf"
+    ],
+    "extracted": 9,
+    "content": null,
+    "quadrants": [
+      "SL20"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SY35": {
+    "designation": "SY35",
+    "desc": "Slim curtain wall",
+    "source": [
+      "SY 35 Catalogue material_.docx"
+    ],
+    "views": [
+      "013-SY35 Top Hung Window Wall Fix.pdf",
+      "014-SY35 with Top Hung Window.pdf"
+    ],
+    "drawings": [
+      "SY35 Slim SCW Generic Board.pdf"
+    ],
+    "extracted": 18,
+    "content": null,
+    "quadrants": [
+      "SY35 with Top Hung Window",
+      "SY35 Top Hung Window Wall Fix"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "SY50": {
+    "designation": "SY50",
+    "desc": "Curtain wall",
+    "source": [
+      "SY 50 Catalogue material_.docx"
+    ],
+    "views": [
+      "015-SY50 Conventional Curtain Wall.pdf",
+      "016-SY50 Structural Curtain Wall.pdf"
+    ],
+    "drawings": [
+      "SY50 Sample Board.pdf",
+      "SY50 with Vent Toggle Glazed 8+16+8.pdf"
+    ],
+    "extracted": 18,
+    "content": null,
+    "quadrants": [
+      "SY50 Conventional Curtain Wall",
+      "SY50 Structural Curtain Wall"
+    ],
+    "missing": [
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "S77": {
+    "designation": "S77",
+    "desc": "Bi-folding",
+    "source": [
+      "S77 folding   Catalogue material_.docx"
+    ],
+    "views": [
+      "004-S77 3+0 Folding Door.pdf"
+    ],
+    "drawings": [],
+    "extracted": 9,
+    "content": null,
+    "quadrants": [
+      "S77 3+ 0 Folding Door"
+    ],
+    "missing": [
+      "**sample boards** \u2014 no large-format section board",
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  },
+  "S60": {
+    "designation": "S60",
+    "desc": "Casement / door",
+    "source": [
+      "S60  Catalogue material_.docx"
+    ],
+    "views": [
+      "001-S60 Side Hung Window.pdf",
+      "002-S60 Single Hinged Door Open Out.pdf",
+      "003-S60 Single Hinged Door Open In.pdf"
+    ],
+    "drawings": [
+      "S60 Casement Door A1 Sample Board.pdf",
+      "S60 Casement Window A1 Sample Board.pdf",
+      "S60 Hinged Door Swing Out 8+16+8.pdf",
+      "S60 Open-In Overlap Sample Board rev01.pdf",
+      "S60 TT Sample Board rev01.pdf"
+    ],
+    "extracted": 25,
+    "content": "s60-sheet.json",
+    "quadrants": [
+      "S60 Side Hung Window",
+      "S60 Single hinded Door Open Out",
+      "S60 Single hinded Door Open In"
+    ],
+    "missing": []
+  },
+  "S50": {
+    "designation": "S50",
+    "desc": "Casement, non-thermal",
+    "source": [
+      "S 50 Non thermal   Catalogue material_.docx"
+    ],
+    "views": [],
+    "drawings": [],
+    "extracted": 0,
+    "content": null,
+    "quadrants": [],
+    "missing": [
+      "**drawing sheets** \u2014 no elevations, no 3D view, no section details",
+      "**sample boards** \u2014 no large-format section board",
+      "**extracted artwork** \u2014 nothing to place on a sheet",
+      "**sheet config** \u2014 the page has not been written yet"
+    ]
+  }
+}
