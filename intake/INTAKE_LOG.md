@@ -25,7 +25,8 @@ For each batch:
 | # | Received | Name | Files | Notes |
 |---|---|---|---|---|
 | 01 | 2026-07-29 | Catalogue materials — system .docx | 10 | Per-system source content, 15MB |
-| 02 | — | *(expected)* SY Families | — | `.rfa` and `.rvt` — Revit family + project files |
+| — | 2026-07-29 | SY Families (`.rfa` / `.rvt`) | ~19 | **PARKED** — not uploaded. See below |
+| 02 | — | *(expected)* PDF — different views | — | |
 
 ---
 
@@ -54,10 +55,31 @@ For each batch:
 
 Not opened. Contents unexamined pending "Analyze now".
 
-### Batch 02 — SY Families (expected, not yet received)
+### PARKED — SY Families (`.rfa` / `.rvt`)
 
-`.rfa` (Revit families) and `.rvt` (Revit projects). Announced by the user as
-the next upload.
+~19 Revit files, ~347MB total. Not uploaded, deliberately. Revisit later.
+
+Two blockers, both real:
+
+- **Unreadable here.** `.rfa` / `.rvt` are proprietary OLE compound formats.
+  No Revit on Linux and no parser that yields usable geometry — an embedded
+  preview thumbnail and a version string is the ceiling.
+- **`SYKON.rvt` is 247MB**, over GitHub's 100MB per-file hard limit. It cannot
+  be pushed at all. The `.rfa` files would push but shouldn't — ~100MB of
+  binaries in normal git history burdens every future clone. Needs Git LFS.
+
+Two possible purposes, and they lead to different work:
+
+1. *Source for catalogue artwork* → wrong artifact. What the `system` block
+   needs is Revit **exports**: section drawings as PDF/DWG (vector, stays crisp
+   at print size) and product views as 300dpi PNG, ideally transparent. Roughly
+   20–40MB instead of 347MB.
+2. *A downloadable BIM library* → a legitimate deliverable in its own right;
+   architects search for these. But it is a hosting job, not a repo job —
+   cloud storage or CDN with a download page on sykon.ae, and the catalogue
+   links out to it.
+
+Unresolved. Ask before acting on either.
 
 ---
 

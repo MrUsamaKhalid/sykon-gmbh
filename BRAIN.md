@@ -116,6 +116,10 @@ Waiting on the user:
 - [ ] **Full catalogue file** — real content and system data
 - [ ] **Artwork** — profile renders, section drawings, application photography,
       certification marks (PIV, ift Rosenheim, A|U|F)
+- [ ] **PARKED: Revit `.rfa`/`.rvt`** (~19 files, ~347MB). Unreadable here, and
+      `SYKON.rvt` at 247MB exceeds GitHub's 100MB file limit. Needs either Revit
+      *exports* for the catalogue, or LFS/CDN hosting if the BIM library is itself
+      a deliverable. See `intake/INTAKE_LOG.md`. Do not act without asking
 - [ ] **Confirmed certifications** — never claim one that is not held
 - [ ] Decision: licence Swiss 721 for section heads? Hanken has no extended cut,
       so live heads read narrower than the master
