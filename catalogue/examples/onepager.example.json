@@ -1,0 +1,42 @@
+{
+  "slug": "sykon-abs-onepager",
+  "title": "Sykon Aluminium Building Systems — Company One-Pager",
+  "running": "Sykon Aluminium Building Systems",
+  "_note": "The 1-pager composes the same blocks as the extended catalogue, at reduced depth. This is a two-side leave-behind: cover plus a single content side. Its exact layout is provisional until it is matched against the reference sheets — the block library is what makes that a composition change rather than a rewrite.",
+  "pages": [
+    {
+      "block": "cover",
+      "headline": "German-engineered aluminium systems for windows, doors, façades and glazed roofs.",
+      "deck": "A standardised system concept, tested to German standards and supplied across the GCC.",
+      "strip": "cover-extrusion.jpg",
+      "products": [
+        { "name": "Casement window", "image": "profile-casement.png" },
+        { "name": "Sliding system", "image": "profile-sliding.png" },
+        { "name": "Curtain wall", "image": "profile-curtainwall.png" }
+      ]
+    },
+    {
+      "block": "highlights",
+      "eyebrow": "Feature highlights",
+      "heading": "Performance with Profile.",
+      "items": [
+        "Superior technical quality profiles and accessories",
+        "Standardised system concept, tried-and-tested and future-oriented",
+        "Solutions for almost all building design requirements",
+        "Advanced thermal insulation across the full system range",
+        "Fire, smoke and security certifications from German test bodies",
+        "Fast support — response within 60 minutes by email or phone"
+      ]
+    },
+    {
+      "block": "back",
+      "contact": {
+        "company": "Sykon Aluminium Building Systems",
+        "address": "German Engineering System Since 1967",
+        "phone": "+971 50 804 0985",
+        "email": "info@sykon.ae",
+        "web": "www.sykon.ae"
+      }
+    }
+  ]
+}

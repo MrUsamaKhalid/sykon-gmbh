@@ -28,13 +28,15 @@
     },
     "red-tint-17": {
       "value": "#F4CED0",
-      "role": "Chevron echo, far layer. 17% red over paper.",
-      "derived_from": "red"
+      "role": "Chevron echo, far layer. 17% red over paper. GRAPHIC ONLY — red text on this measures 4.28:1, just under AA for body sizes. Use red-tint-12 when the tint has to carry red text.",
+      "derived_from": "red",
+      "text_safe_for_red": false
     },
     "red-tint-12": {
       "value": "#F7D9DB",
-      "role": "Product 'spot' disc behind profile renders. 12% red over paper.",
-      "derived_from": "red"
+      "role": "The product 'spot' disc behind profile renders, and any tinted chip that carries red text — the eyebrow tag. 12% red over paper, 4.66:1 with red text.",
+      "derived_from": "red",
+      "text_safe_for_red": true
     },
     "ink": {
       "value": "#1C1C1A",
