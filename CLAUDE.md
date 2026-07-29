@@ -6,22 +6,43 @@
 items, file map, session log. Read it before doing anything. When a decision
 gets made, record it there, not in chat.
 
-## CURRENT MODE: INTAKE — collect, do not analyse
+## CURRENT MODE: BUILD — S60 spec sheet
 
-The user is uploading catalogue materials in batches, deliberately one at a
-time. For every batch:
+Intake is closed. Building the per-system product spec sheet from
+`intake/materials/07-references/SAMPLE__USE_THIS.pdf`, as a data-driven block
+so all ten systems regenerate from one template. S60 first, approve, then scale.
 
-1. Save it under `intake/materials/<NN>-<short-name>/`
-2. Log it in `intake/INTAKE_LOG.md`
-3. Reply **"Got it."** plus one line on what landed
-4. **Stop**
+If new material arrives mid-build: save it under `intake/materials/`, log it in
+`intake/INTAKE_LOG.md`, and continue.
 
-Do not analyse, summarise the contents, extract data, critique, or start
-building. Analysis begins **only** when the user says **"Analyze now"**.
+## Source of truth, in order
 
-This is written down because the failure mode is being helpful too early —
-processing an upload the user is not ready to discuss breaks their flow. When
-in doubt during intake, say less.
+1. **The 10 `.docx` in `intake/materials/01-catalogue-materials/`** — the user
+   has stated these are authoritative. A figure there beats the same figure in
+   the portfolio, the old brochure, or the sample.
+2. Drawings / PDF views (vector sections from Sujith).
+3. The brand master, for anything visual.
+4. Portfolio and old brochure — copy source only. They are superseded and must
+   never override a `.docx` number.
+
+**Never silently reconcile a conflict. Surface it.** Certification claims in
+particular: if the new content does not support a claim a legacy document makes,
+it does not go in.
+
+## Two binding requirements from Anthony (project lead)
+
+Both came from his review of the first draft and are not optional:
+
+1. **Typology symbols must be large and accurate.** His words: the section
+   "appears too small, and the figures do not clearly represent the exact
+   typologies." Make the strip bigger than the sample's, and make sure each
+   symbol is genuinely the typology its label claims. A mislabelled symbol in a
+   technical catalogue is worse than an omitted one.
+2. **The extended catalogue must reserve space for dimensions and detailed
+   sections.** Sujith supplies that content as titled vector PDFs.
+
+The project is behind schedule. Prefer shipping something reviewable over
+polishing something unreviewable.
 
 ## The one thing to get right
 

@@ -5,22 +5,71 @@ Keep it current: when a decision is made, record it here, not in chat.
 
 ---
 
-## ACTIVE MODE: INTAKE — collect only, do not analyse
+## ACTIVE MODE: BUILD — S60 spec sheet
 
-The user is uploading catalogue materials in batches, one at a time.
+Intake closed at batch 08. Analysis authorised. Now building.
 
-**The rule:** for every batch, save it, log it in `intake/INTAKE_LOG.md`, reply
-**"Got it."** plus a one-line note of what landed, and **stop**. Do not analyse,
-summarise, critique, extract, or start building from it.
+**Current objective:** reproduce `SAMPLE__USE_THIS.pdf` as a data-driven block
+in the catalogue engine, populated with real S60 content, so the other nine
+systems regenerate from the same template. S60 gets approved first, then scale.
 
-**Analysis begins only when the user says "Analyze now"** (or an unmistakable
-equivalent). Until that phrase arrives, collecting is the whole job.
+If more material arrives, fall back to the intake habit — save it under
+`intake/materials/`, log it in `intake/INTAKE_LOG.md`, and carry on.
 
-Why this is written down: it is easy to "helpfully" start processing an upload.
-That breaks the user's flow and wastes the batch. Don't.
+## SOURCE OF TRUTH — ordering
 
-When "Analyze now" arrives → switch to ANALYSIS MODE: read every logged item,
-cross-reference against the brand system already built, and report findings.
+When two sources disagree about a technical fact, this is the order:
+
+1. **The 10 `.docx` files in `intake/materials/01-catalogue-materials/`.**
+   The user has stated these are the source of truth. A figure in a `.docx`
+   beats the same figure anywhere else — portfolio, old brochure, or the sample.
+2. Drawings and PDF views (Sujith's vector sections).
+3. The brand master, for anything visual.
+4. Portfolio and old brochure — mine for copy, but never let them override a
+   `.docx` number. They are being superseded.
+
+Never silently reconcile a conflict. Surface it.
+
+## People
+
+| Who | Role | Note |
+|---|---|---|
+| **Anthony Makhlouf** | Director of Pre-Sales, Sykon GmbH · `a.makhlouf@sykon.ae` | **Heads this project.** The approver. His design feedback is binding |
+| **Usama Khalid** | `usama@sykonproperties.ae` | The user. Producing the catalogues |
+| **Sujith** | `sujith@sykon.ae` | Producing the section details and dimensions for the extended catalogue |
+| Muhammad Ali Zafar | Marketing Manager, Sykon Properties | Coordinating freelancers |
+| Zain Riaz, Mohammed Imran | cc | |
+
+## Anthony's direction (from the email thread — treat as requirements)
+
+Agreed plan, 8 Apr:
+- Individual catalogues **per system first**, then a comprehensive catalogue
+  covering the full portfolio. This matches the build order already chosen.
+- Technical info is the base; **placeholder images are acceptable for now**.
+- A freelancer will produce **40–50 rendered images** of doors and windows from
+  various angles, detailed and overall. BIM models go out after first approval.
+- The design must align with the **new corporate identity** — that is the brand
+  master already encoded in `brand/tokens/`.
+
+Feedback on the first draft, 10 Apr — **the two things he asked to be fixed**:
+
+1. **"The typology section appears too small, and the figures do not clearly
+   represent the exact typologies. Some clients prefer to see accurate and
+   recognizable typology symbols."**
+   → This is why the 53 typology SVGs exist. In the rebuild the typology strip
+   must be **larger than the sample's**, and every symbol must be the correct,
+   recognisable one for its label. A wrong symbol is worse than no symbol.
+2. **"For the extended catalogue, we need to allocate space for the dimensions
+   and detailed sections."**
+   → The extended catalogue needs a dimensions/section region reserved. Sujith
+   supplies the content.
+
+1 May:
+- Drawings and sections are **vector PDFs**, each section clearly titled and
+  ready to lift directly. Good — sections can be extracted as vector, not traced.
+- The product images supplied so far are **AI-generated placeholders**.
+- **The project is behind schedule.** Prefer shipping something reviewable over
+  polishing something unreviewable.
 
 ---
 
@@ -38,9 +87,12 @@ Contact of record: `+971 50 804 0985` · `info@sykon.ae` · `www.sykon.ae`
 > `sykon-featured-listing` skills belong to Properties: copy their *engineering*
 > pattern, never their *design*.
 
-**Goal:** product catalogues — an extended systems catalogue (6+ pages) and a
-short 1-pager, as print and digital PDFs. The design system exists to serve
-catalogue production.
+**Goal:** product catalogues — a per-system spec sheet (the "1-pager") and an
+extended catalogue covering the full portfolio, as print and digital PDFs. The
+design system exists to serve catalogue production.
+
+Ten systems: S50 non-thermal, S60, S77 folding, SL20 panoramic, SL350
+non-thermal, SL450 lift-and-slide, SL450S, SL580, SY35, SY50.
 
 ---
 

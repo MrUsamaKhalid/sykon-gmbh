@@ -31,7 +31,8 @@ For each batch:
 | 04 | 2026-07-29 | Drawings — Batch B | 10 | Sample boards, 20MB. No overlap with A; A+B = 21 |
 | 05 | 2026-07-29 | Performance icons | 9 | PNG, 4.1MB |
 | 06 | 2026-07-29 | Typologies | 53 | SVG in A/B/C sets, 3.1MB (+1 redundant zip) |
-| 07 | 2026-07-29 | References — sample, background, portfolio, old brochure | 5 | 26MB. **Intake closed here** |
+| 07 | 2026-07-29 | References — sample, background, portfolio, old brochure | 5 | 26MB |
+| 08 | 2026-07-29 | Email conversation | 6 | Project thread, 1.2MB. **Intake closed here** |
 
 ---
 
@@ -210,6 +211,17 @@ Not opened. Contents unexamined pending "Analyze now".
 The sample's own icons are **placeholders** — three 107×107px images repeated
 across all 8 typology slots and the spec rows. The real icons are batches 05
 and 06.
+
+### Batch 08 — Email conversation  *(final)*
+
+`intake/materials/08-email-convo/` — 6 PDFs, 1.2MB. The project thread,
+Mar–May 2026, between Anthony Makhlouf (Sykon GmbH, project lead), Usama Khalid,
+Muhammad Ali Zafar and Sujith.
+
+Carries the binding project direction now recorded in `BRAIN.md`: the per-system
+then portfolio-wide sequence, Anthony's two design corrections (typologies too
+small and not recognisable; reserve space for dimensions and sections), the
+freelancer render pipeline, and the schedule pressure.
 
 ### PARKED — SY Families (`.rfa` / `.rvt`)
 
