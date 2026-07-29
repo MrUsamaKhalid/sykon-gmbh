@@ -29,6 +29,8 @@ For each batch:
 | 02 | 2026-07-29 | PDF views — per-system drawings | 22 | Numbered 000–020, 14MB |
 | 03 | 2026-07-29 | Drawings — Batch A | 11 | Sample boards, 19MB. Batch B to follow |
 | 04 | 2026-07-29 | Drawings — Batch B | 10 | Sample boards, 20MB. No overlap with A; A+B = 21 |
+| 05 | 2026-07-29 | Performance icons | 9 | PNG, 4.1MB |
+| 06 | 2026-07-29 | Typologies | 53 | SVG in A/B/C sets, 3.1MB (+1 redundant zip) |
 
 ---
 
@@ -139,6 +141,56 @@ complete 21-file drawing set, matching the user's screenshot.
 
 Note for analysis: `SL450S A1 Sample Board` here vs `LS450S Sample Board rev01`
 in Batch A — same system, different prefix and revision marker. Resolve later.
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 05 — Performance icons
+
+`intake/materials/05-performance-icons/` — 9 PNGs, 4.1MB, from
+`Performance_Icons.zip`. Descriptively named, covering the test/performance
+categories a spec table cites:
+
+| File | Likely category |
+|---|---|
+| `Acoustic performance illustration with house and speaker.png` | Sound reduction |
+| `Airflow dynamics around a house.png` | Air permeability |
+| `Static water penetration icon.png` | Watertightness, static |
+| `Dynamic water penetration test icon.png` | Watertightness, dynamic |
+| `Wind resistance safety icon design.png` | Wind load, safety |
+| `Wind resistance serviceability concept illustration.png` | Wind load, serviceability |
+| `Thermal cycling around the house.png` | Thermal performance |
+| `Horizontal displacement in building structure.png` | Structural movement |
+| `Vertical displacement in building structure.png` | Structural movement |
+
+Note for analysis: these are **raster**. The catalogue is vector-first and these
+would sit next to spec tables at small size, so check resolution and whether
+transparent-background or SVG versions exist. Filenames read as AI-generation
+prompts rather than an asset naming scheme — worth renaming to category codes.
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 06 — Typologies
+
+`intake/materials/06-typologies/Typologies/SVG/` — 53 SVGs, 3.1MB, from
+`Typologies.zip`, split across three folders:
+
+| Set | Files | Range |
+|---|---|---|
+| `A/` | 20 | Asset 80–100 |
+| `B/` | 20 | Asset 100–119 |
+| `C/` | 13 | Asset 120–132 |
+
+`C/C.zip` also present — **verified byte-identical to the 13 files already in
+`C/`**, so it is a redundant archive. Left in place, not counted in the 53.
+
+Notes for analysis, not resolved now:
+- Filenames are Illustrator export defaults (`Asset NN`), carrying no meaning.
+  These will need mapping to actual typology names before they are usable.
+- Numbering overlaps between sets: `Asset 100` appears in both `A/` and `B/`;
+  `A/` also has `Asset 100 (2)`.
+- Several `(2)` duplicates: `Asset 86`, `Asset 95`, `Asset 100` in `A/`,
+  `Asset 122` in `C/`. Establish which is authoritative.
+- Vector, which is right for the catalogue — unlike the performance icons.
 
 Not opened. Contents unexamined pending "Analyze now".
 
