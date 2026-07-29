@@ -1,0 +1,271 @@
+{
+  "_note": "Typology SVGs named by reading the drawings \u2014 the files carry no text metadata. Sets A/B/C are export batches, not categories; many B files duplicate A.",
+  "_set_logic": "\"A, B and C are export batches, not clean typology categories - the boundaries fall mid-family and should not be used as catalogue groupings.\\n\\nBy actual content there are FOUR families:\\n\\n1. SLIDING / LIFT-AND-SLIDE (13 unique drawings, 26 files) - straddles A and B. Rendered as shaded grey aluminium elevations with black glass and directional arrows on each operable leaf; several sit in a hatched wall/shutter-box context panel. Covers 1 to 6 sashes, bypass and centre-meeting-stile configurations, a 90/270-degree corner unit, and optional fly screens, louvred shutters and roller shutters. Occupies ALL of folder A (20 files) plus B/Asset 100-105 (6 files) - i.e. the batch spilled over the folder boundary when the second export ran.\\n\\n2. DIN OPENING SYMBOLS for doors and vents (6 unique, 12 files) - B/Asset 106-117. Completely different visual language: flat EN 12519 / DIN 1356 symbol tiles on a 3x3 divided frame, solid triangles for opening-toward-viewer and dotted triangles for opening-away. Hinged inward/outward doors, parallel-opening, projected/top-hung, and tilt-and-turn.\\n\\n3. PIVOT CASEMENTS (2 unique, 2 files) - B/Asset 118-119. Portrait 3D-style frames with white pivot-bearing blocks and dashed fold diamonds; vertical axis and horizontal axis.\\n\\n4. TILT-AND-TURN CASEMENTS (7 unique, 13 files) - all of folder C. Shaded aluminium elevations with hairline diagonal opening marks in the glass. Single and two-light units, side-hung and bottom-hung companions, fixed lights, fanlights/transoms, and P.W.D. (accessible low-threshold) frame variants flagged with a wheelchair pictogram.\\n\\nThe A/B split is therefore an artefact: family 1 was exported twice, the first copy filling folder A and the overflow of the second copy landing at the head of folder B. C is the only folder that maps cleanly onto one family.\"",
+  "typologies": {
+    "A/Asset 80.svg": {
+      "name": "Sliding window, 2-panel bypass, with fly screen and louvred shutter",
+      "confidence": "high",
+      "description": "Printed caption in the artwork: \"Two sash sliding window, with flyscreen & shutter*\". Elevation of a two-track bypass slider: two operable sashes with directional arrows, an insect screen track and a "
+    },
+    "A/Asset 81.svg": {
+      "name": "Sliding window, single sliding sash, with fly screen and louvred shutter",
+      "confidence": "high",
+      "description": "Printed caption: \"Single sash sliding window, with fly screen & shutter*\". One operable sliding sash running against a fixed light, plus a fly-screen leaf and a louvred shutter leaf. Standard name: mo"
+    },
+    "A/Asset 82.svg": {
+      "name": "Sliding window, 2-panel bypass, with louvred shutter",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with shutter*\". Two sliding sashes with opposed arrows, flanked by louvred shutter leaves, in a hatched wall context. Standard name: 2-panel sliding (XX) wind"
+    },
+    "A/Asset 83.svg": {
+      "name": "Sliding window, single sliding sash, with louvred shutter",
+      "confidence": "high",
+      "description": "Printed caption: \"Single sash sliding window with shutter*\". One operable sash (arrow pointing right) sliding behind a louvred shutter leaf. Standard name: monorail single-slide (OX) window with louvr"
+    },
+    "A/Asset 84.svg": {
+      "name": "Sliding window, 4-panel corner unit, 90 degree and 270 degree corner",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash sliding widow 90\u00b0 & 270\u00b0 corner typology*\" (typo \"widow\" is in the source artwork). Axonometric of a four-leaf slider turning a corner, two leaves per return, all four arro"
+    },
+    "A/Asset 86.svg": {
+      "name": "Sliding window, 6-panel meeting stile",
+      "confidence": "high",
+      "description": "Printed caption: \"Six sash meeting stile window*\". Very wide elevation, six sliding leaves in two groups of three with arrows converging on a central lockable meeting stile. Standard name: 6-panel cen"
+    },
+    "A/Asset 86 (2).svg": {
+      "name": "Sliding window, 3-panel",
+      "confidence": "high",
+      "description": "Printed caption: \"Three sash sliding window*\". Three-leaf elevation with three directional arrows. NOTE: despite the filename, this is NOT a variant of Asset 86 (six sash) - it is a different drawing "
+    },
+    "A/Asset 87.svg": {
+      "name": "Sliding window, 2-panel bypass, with roller shutter and fly screen",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with rolling shutter and fly screen*\". Two sliding sashes with a slatted roller-shutter box and curtain shown above/over the opening, plus a mesh fly screen. "
+    },
+    "A/Asset 88.svg": {
+      "name": "Sliding window, 2-panel bypass, with roller shutter",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with rolling shutter*\". Two sliding sashes with opposed arrows under a slatted roller-shutter box and part-lowered curtain. Standard name: 2-panel slider with"
+    },
+    "A/Asset 89.svg": {
+      "name": "Sliding window, 4-panel meeting stile, with fly screens",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash meeting stile window with fly screen*\". Four leaves, arrows diverging from a central meeting stile, with two mesh fly-screen leaves (rendered as teal grid) inboard. Standar"
+    },
+    "A/Asset 90.svg": {
+      "name": "Sliding window, 4-panel meeting stile",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash meeting stile window*\". Four glazed leaves with four arrows meeting at a central interlock. Standard name: 4-panel centre-meeting slider (2+2), no screen."
+    },
+    "A/Asset 91.svg": {
+      "name": "Sliding window, 2-panel bypass, with fly screen",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with fly screen*\". Two sliding sashes with opposed arrows plus a full-height mesh fly-screen leaf on its own track. Standard name: 2-panel slider with insect "
+    },
+    "A/Asset 92.svg": {
+      "name": "Sliding window, 2-panel bypass",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window*\". The base typology of the sliding family: two glazed leaves on two tracks, both arrowed operable. Standard name: 2-panel bypass slider (XX) / lift-and-slide"
+    },
+    "A/Asset 93.svg": {
+      "name": "Sliding window, 2-panel bypass, with fly screen and louvred shutter (duplicate export of Asset 80)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window, with flyscreen & shutter*\". Byte-different but visually identical second export of A/Asset 80 - the only measurable difference is the random phase of the sti"
+    },
+    "A/Asset 95.svg": {
+      "name": "Sliding window, single sliding sash, with fly screen and louvred shutter (duplicate export of Asset 81)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single sash sliding window, with fly screen & shutter*\". Second export of A/Asset 81; identical drawing, stipple-pattern phase differs only."
+    },
+    "A/Asset 95 (2).svg": {
+      "name": "Sliding window, 2-panel bypass, with louvred shutter (duplicate export of Asset 82)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with shutter*\". NOT a variant of Asset 95 despite the filename - it is the second export of A/Asset 82. Identical drawing, stipple-pattern phase differs only."
+    },
+    "A/Asset 96.svg": {
+      "name": "Sliding window, single sliding sash, with louvred shutter (duplicate export of Asset 83)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single sash sliding window with shutter*\". Second export of A/Asset 83; identical drawing, stipple-pattern phase differs only."
+    },
+    "A/Asset 97.svg": {
+      "name": "Sliding window, 4-panel corner unit, 90 degree and 270 degree corner (duplicate of Asset 84)",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash sliding widow 90\u00b0 & 270\u00b0 corner typology*\". Pixel-identical second export of A/Asset 84."
+    },
+    "A/Asset 98.svg": {
+      "name": "Sliding window, 6-panel meeting stile (duplicate of Asset 86)",
+      "confidence": "high",
+      "description": "Printed caption: \"Six sash meeting stile window*\". Pixel-identical second export of A/Asset 86."
+    },
+    "A/Asset 100 (2).svg": {
+      "name": "Sliding window, 2-panel bypass, with roller shutter and fly screen (duplicate of Asset 87)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with rolling shutter and fly screen*\". Pixel-identical second export of A/Asset 87. It is NOT related to B/Asset 100, which is a three-sash slider."
+    },
+    "B/Asset 100.svg": {
+      "name": "Sliding window, 3-panel (duplicate of A/Asset 86 (2))",
+      "confidence": "high",
+      "description": "Printed caption: \"Three sash sliding window*\". Pixel-identical second export of A/Asset 86 (2). Shares a filename with A/Asset 100 (2) but is a completely different typology."
+    },
+    "B/Asset 101.svg": {
+      "name": "Sliding window, 2-panel bypass, with roller shutter (duplicate of A/Asset 88)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with rolling shutter*\". Pixel-identical second export of A/Asset 88."
+    },
+    "B/Asset 102.svg": {
+      "name": "Sliding window, 4-panel meeting stile, with fly screens (duplicate of A/Asset 89)",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash meeting stile window with fly screen*\". Pixel-identical second export of A/Asset 89."
+    },
+    "B/Asset 103.svg": {
+      "name": "Sliding window, 4-panel meeting stile (duplicate of A/Asset 90)",
+      "confidence": "high",
+      "description": "Printed caption: \"Four sash meeting stile window*\". Pixel-identical second export of A/Asset 90."
+    },
+    "B/Asset 104.svg": {
+      "name": "Sliding window, 2-panel bypass, with fly screen (duplicate of A/Asset 91)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window with fly screen*\". Pixel-identical second export of A/Asset 91."
+    },
+    "B/Asset 105.svg": {
+      "name": "Sliding window, 2-panel bypass (duplicate of A/Asset 92)",
+      "confidence": "high",
+      "description": "Printed caption: \"Two sash sliding window*\". Pixel-identical second export of A/Asset 92."
+    },
+    "B/Asset 106.svg": {
+      "name": "Parallel-opening (parallel projected) outward window",
+      "confidence": "high",
+      "description": "Printed caption: \"Parallel projected outward window\". Flat DIN/EN 12519 opening-symbol tile on a 3x3 divided frame. Symbol is the parallel-opening mark: two solid triangles meeting apex-to-apex vertic"
+    },
+    "B/Asset 107.svg": {
+      "name": "Side-hung door, inward opening (hinge on right as drawn)",
+      "confidence": "high",
+      "description": "Printed caption: \"Hinged opening inward door\". SOLID triangle - base on the right-hand vertical, apex pointing left - i.e. hinge on the right, leaf swings toward the viewer. Standard name: single-leaf"
+    },
+    "B/Asset 108.svg": {
+      "name": "Side-hung door, outward opening (hinge on right as drawn)",
+      "confidence": "high",
+      "description": "Printed caption: \"Hinged opening outward door\". DOTTED/dashed triangle - base on the right-hand vertical, apex pointing left. Dashed = leaf swings away from the viewer. Standard name: single-leaf side"
+    },
+    "B/Asset 109.svg": {
+      "name": "Parallel-opening plus top-hung projected outward window",
+      "confidence": "high",
+      "description": "Printed caption: \"Parallel and projected outward window\". Combined symbol: the parallel-opening apex-to-apex pair overlaid with a V (apex down, base at head) for the top-hung projected action. Standar"
+    },
+    "B/Asset 110.svg": {
+      "name": "Tilt-and-turn vent (also labelled tilt-and-turn concealed-sash vent)",
+      "confidence": "high",
+      "description": "Printed caption carries TWO names on one symbol: \"Tilt and turn vent window\" / \"Tilt and turn vent conceal window\". Symbol is the classic combined mark - a triangle with apex up and base at the sill ("
+    },
+    "B/Asset 111.svg": {
+      "name": "Top-hung projected outward window (awning)",
+      "confidence": "high",
+      "description": "Printed caption: \"Projected outward window\". Symbol is a solid V with apex at the sill and base along the head - hinge at the top, sash projects outward at the bottom. Standard name: top-hung / awning"
+    },
+    "B/Asset 112.svg": {
+      "name": "Parallel-opening (parallel projected) outward window (duplicate of Asset 106)",
+      "confidence": "high",
+      "description": "Printed caption: \"Parallel projected outward window\". Pixel-identical second export of B/Asset 106 (max channel difference 13 - antialiasing only)."
+    },
+    "B/Asset 113.svg": {
+      "name": "Side-hung door, inward opening (duplicate of Asset 107)",
+      "confidence": "high",
+      "description": "Printed caption: \"Hinged opening inward door\". Pixel-identical second export of B/Asset 107."
+    },
+    "B/Asset 114.svg": {
+      "name": "Side-hung door, outward opening (duplicate of Asset 108)",
+      "confidence": "high",
+      "description": "Printed caption: \"Hinged opening outward door\". Effectively identical second export of B/Asset 108; only 0.08% of pixels differ, and only along the dotted diagonals where the dash phase starts one ste"
+    },
+    "B/Asset 115.svg": {
+      "name": "Parallel-opening plus top-hung projected outward window (duplicate of Asset 109)",
+      "confidence": "high",
+      "description": "Printed caption: \"Parallel and projected outward window\". Pixel-identical second export of B/Asset 109."
+    },
+    "B/Asset 116.svg": {
+      "name": "Tilt-and-turn vent, also labelled concealed-sash (duplicate of Asset 110)",
+      "confidence": "high",
+      "description": "Printed caption: \"Tilt and turn vent window\" / \"Tilt and turn vent conceal window\". Pixel-identical second export of B/Asset 110, including the same dual caption."
+    },
+    "B/Asset 117.svg": {
+      "name": "Top-hung projected outward window (duplicate of Asset 111)",
+      "confidence": "high",
+      "description": "Printed caption: \"Projected outward window\". Pixel-identical second export of B/Asset 111."
+    },
+    "B/Asset 118.svg": {
+      "name": "Vertical-axis pivot casement",
+      "confidence": "high",
+      "description": "Printed caption: \"Vertical pivot casement\". Portrait 3D-style frame elevation with the pivot bearing drawn as a white block at the bottom centre of the sash (matching one at the head), and dashed fold"
+    },
+    "B/Asset 119.svg": {
+      "name": "Horizontal-axis pivot casement",
+      "confidence": "high",
+      "description": "Printed caption: \"Horizontal pivot casement\". Same frame as Asset 118 but the white pivot-bearing blocks sit at mid-height on the left and right jambs, so the sash rotates about a horizontal axis. Sta"
+    },
+    "C/Asset 120.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf and bottom-hung fanlight",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung and bottom hung casement\". Two-light casement (left leaf side-hung DIN left, right leaf tilt-and-turn DIN right) under a full-width transom light ca"
+    },
+    "C/Asset 122.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf and bottom-hung fanlight (duplicate of Asset 120)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung and bottom hung casement\". Same drawing as C/Asset 120 - when the caption block is excluded and each drawing is normalised to its own bounding box, "
+    },
+    "C/Asset 122 (2).svg": {
+      "name": "Tilt-and-turn casement with fixed light",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with fixed light\". Two-light unit: left light bears the crossed \"+\" fixed-glazing mark, right light bears the tilt-and-turn mark (apex-up tilt plus turn hinged on "
+    },
+    "C/Asset 123.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf, P.W.D. accessible frame",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung casement with P.W.D. frame\", accompanied by a wheelchair pictogram tile. Two-light casement, left leaf side-hung and right leaf tilt-and-turn, on a "
+    },
+    "C/Asset 124.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung casement\". Two-light casement: left leaf plain side-hung (triangle base on the left jamb, hinge left), right leaf tilt-and-turn (hinge right, plus b"
+    },
+    "C/Asset 125.svg": {
+      "name": "Tilt-and-turn casement, single light, P.W.D. accessible frame",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn casement with P.W.D. frame\", with a wheelchair pictogram tile alongside. Single portrait tilt-and-turn sash on a low-threshold accessible frame. Standard name: sin"
+    },
+    "C/Asset 126.svg": {
+      "name": "Tilt-and-turn casement, single light",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn casement\". The base casement typology: one portrait sash carrying the combined mark - apex-up triangle on the sill (bottom-hung tilt) plus a triangle based on the "
+    },
+    "C/Asset 127.svg": {
+      "name": "Tilt-and-turn casement with fixed light (duplicate of Asset 122 (2))",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with fixed light\". Same drawing as C/Asset 122 (2) - drawings overlay at 0.00% differing pixels once captions are excluded. Caption point size is the only differen"
+    },
+    "C/Asset 128.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf (duplicate of Asset 124)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung casement\". Same drawing as C/Asset 124 - 0.00% differing pixels once captions are excluded. I initially read a sash-profile difference between the t"
+    },
+    "C/Asset 129.svg": {
+      "name": "Tilt-and-turn casement, single light, P.W.D. accessible frame (duplicate of Asset 125)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn casement with P.W.D. frame\". Same drawing as C/Asset 125 - 0.28% differing pixels once captions are excluded, i.e. identical within antialiasing."
+    },
+    "C/Asset 130.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf and fixed fanlight",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung casement and fanlight\". Two-light casement (left side-hung, right tilt-and-turn) under a full-width transom light that carries the \"+\" FIXED mark - "
+    },
+    "C/Asset 131.svg": {
+      "name": "Tilt-and-turn casement with side-hung leaf, P.W.D. accessible frame (duplicate of Asset 123)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn with side-hung casement with P.W.D. frame\", with wheelchair pictogram. Same drawing as C/Asset 123 - 0.00% differing pixels once captions are excluded."
+    },
+    "C/Asset 132.svg": {
+      "name": "Tilt-and-turn casement, single light (duplicate of Asset 126)",
+      "confidence": "high",
+      "description": "Printed caption: \"Single tilt & turn casement\". Same drawing as C/Asset 126 - 0.46% differing pixels once captions are excluded, i.e. identical within antialiasing."
+    }
+  }
+}

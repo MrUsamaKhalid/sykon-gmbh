@@ -129,11 +129,11 @@ def build_css(bleed_mm, marks):
 %(fonts)s
 @page{size:%(pw)smm %(ph)smm;margin:0}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-html,body{background:%(paper)s}
+html,body{background:%(page)s}
 body{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
      font-feature-settings:"liga" 1,"kern" 1;color:%(ink)s;-webkit-font-smoothing:antialiased}
 
-.page{position:relative;width:%(pw)smm;height:%(ph)smm;background:%(paper)s;
+.page{position:relative;width:%(pw)smm;height:%(ph)smm;background:%(page)s;
       overflow:hidden;page-break-after:always}
 .page:last-child{page-break-after:auto}
 .trim{position:absolute;top:%(b)smm;left:%(b)smm;width:%(tw)smm;height:%(th)smm}
@@ -216,7 +216,7 @@ table.spec td.v{font-weight:500}
         "tw": TRIM_W, "th": TRIM_H,
         "b": bleed_mm, "b2": bleed_mm + MARGIN,
         "crop": crop,
-        "paper": TK.PAPER, "ink": TK.INK, "red": TK.RED, "warm": TK.PAPER_WARM,
+        "page": TK.PAGE, "paper": TK.PAPER, "ink": TK.INK, "red": TK.RED, "warm": TK.PAPER_WARM,
         "cool": TK.PAPER_COOL, "tint17": TK.RED_TINT_17, "tint12": TK.RED_TINT_12,
     }
 
@@ -275,9 +275,11 @@ def logo(name, height_mm):
     p = os.path.join(LOGO_DIR, name + ".svg")
     if not os.path.exists(p):
         return ""
-    return '<div style="height:%smm">%s</div>' % (
+    return '<div style="height:%smm;line-height:0">%s</div>' % (
         height_mm,
-        svg_inline(p).replace("<svg ", '<svg style="height:100%%;width:auto;display:block" ', 1),
+        svg_inline(p).replace(
+            "<svg ", '<svg height="%smm" style="height:%smm;width:auto;display:block" '
+            % (height_mm, height_mm), 1),
     )
 
 
@@ -606,7 +608,175 @@ def blk_back(b, images, ctx):
     )
 
 
+def blk_sheet(b, images, ctx):
+    """The per-system product spec sheet.
+
+    Reproduces intake/materials/07-references/SAMPLE__USE_THIS.pdf, whose layout
+    was measured element by element. Vertical bands, in mm from the page top:
+
+        masthead        0      - 64.94
+        red rule        64.94  - 66.67
+        overview        66.67  - 129.96
+        spec tables     129.96 - 200.82
+        typologies      200.82 - 259.65
+        footer          266.97 - 283.98
+
+    Type area runs 14.03mm to 195.97mm; the typology strip and segment cards
+    both centre on x = 105.
+
+    TWO DELIBERATE DEPARTURES FROM THE SAMPLE, both required:
+
+    1. The typology strip is LARGER than the sample's. Anthony's review said the
+       section "appears too small, and the figures do not clearly represent the
+       exact typologies". Cells go from roughly 7mm to 17mm, and the icons are
+       the real typology drawings rather than the sample's repeated placeholder.
+    2. Nothing prints that the source .docx does not support. The sample carries
+       spec and certification figures that appear nowhere in the system
+       documents; those rows are dropped rather than reproduced.
+    """
+    ink, red, warm = TK.INK, TK.RED, TK.PAPER_WARM
+
+    chips = ""
+    for c in b.get("chips", [])[:4]:
+        icon = c.get("icon", "")
+        chips += (
+            '<div class="chip"><div class="chip-i">%s</div>'
+            '<div><div class="chip-a">%s</div><div class="chip-c">%s</div></div></div>'
+            % (
+                img(images, icon, style="width:100%;height:100%;object-fit:contain") if icon else "",
+                esc(c.get("value", "")),
+                esc(c.get("note", "")),
+            )
+        )
+
+    def table(title, rows):
+        if not rows:
+            return ""
+        tr = ""
+        for i, r in enumerate(rows):
+            icon = r.get("icon", "")
+            tr += (
+                '<tr class="%s"><td class="ic">%s</td><td class="k">%s</td><td class="v">%s</td></tr>'
+                % (
+                    "alt" if i % 2 == 0 else "",
+                    img(images, icon, style="width:3.6mm;height:3.6mm;object-fit:contain") if icon else "",
+                    esc(r.get("label", "")),
+                    esc(r.get("value", "")),
+                )
+            )
+        return ('<div class="col"><div class="h-sec">%s</div>'
+                '<table class="sheet">%s</table></div>' % (esc(title), tr))
+
+    typ = ""
+    for t in b.get("typologies", [])[:8]:
+        p = t.get("svg", "")
+        art = (svg_inline(p).replace("<svg ", '<svg style="width:100%;height:100%;display:block" ', 1)
+               if p and os.path.exists(p) else plate(t.get("name", "typology")))
+        lbl = "<br/>".join(esc(x.strip()) for x in t.get("name", "").split("|"))
+        typ += '<div class="typ"><div class="typ-a">%s</div><div class="typ-l">%s</div></div>' % (art, lbl)
+
+    cards = ""
+    for s in b.get("segments", [])[:4]:
+        cards += ('<div class="card"><div class="card-t">%s</div><div class="card-b">%s</div></div>'
+                  % (esc(s.get("title", "")), esc(s.get("note", ""))))
+
+    marks = "".join(img(images, m, style="height:6.4mm;width:auto") for m in b.get("cert_marks", []))
+
+    name = b.get("system_name", "")
+    name_html = ("%s<b>%s</b>" % tuple(esc(x) for x in name.split("|", 1))
+                 if "|" in name else esc(name))
+
+    css = """
+<style>
+.sh-mast{position:absolute;top:0;left:0;width:100%%;height:64.94mm;background:%(ink)s;overflow:hidden}
+.sh-glow{position:absolute;left:50%%;top:20mm;width:76mm;height:76mm;margin-left:-38mm;border-radius:50%%;
+         background:radial-gradient(closest-side,rgba(193,23,32,.32),rgba(193,23,32,0))}
+.sh-rule{position:absolute;top:64.94mm;left:0;width:100%%;height:1.73mm;background:%(red)s}
+.sh-logo{position:absolute;top:12.7mm;left:14.2mm;height:11.2mm;z-index:3}
+.sh-name{position:absolute;top:28.4mm;left:14.2mm;font-size:44px;font-weight:500;line-height:1.05;
+         letter-spacing:-.02em;color:%(warm)s;z-index:3}
+/* Not `red`: on the ink masthead that measures 2.77:1, below even the
+   large-text threshold. `red-on-dark` is the minimum lift clearing 3:1. */
+.sh-name b{color:%(reddark)s;font-weight:500}
+.sh-chips{position:absolute;top:49.6mm;left:14.1mm;display:flex;gap:8mm;z-index:3}
+.chip{display:flex;align-items:center;gap:2.2mm}
+.chip-i{width:7.3mm;height:7.6mm;border-radius:1.6mm;background:%(red)s;flex:0 0 auto;padding:1.4mm}
+.chip-a{font-size:8.6px;font-weight:700;color:%(warm)s;line-height:1.14}
+.chip-c{font-size:6.2px;color:%(warm)s;opacity:.62;line-height:1.26;margin-top:.3mm}
+.sh-hero{position:absolute;top:5mm;right:-3mm;width:72mm;z-index:2}
+.h-sec{font-size:17px;font-weight:500;color:%(red)s;letter-spacing:-.006em;margin-bottom:4.4mm}
+.sh-body{position:absolute;top:74mm;left:14.03mm;width:106mm}
+.sh-body .body{font-size:9.2px;line-height:1.62}
+.sh-body .body p+p{margin-top:3.2mm}
+.sh-hair{position:absolute;left:14.03mm;width:181.94mm;height:.18mm;background:rgba(0,0,0,.15)}
+.sh-specs{position:absolute;top:137mm;left:14.03mm;width:181.94mm;display:flex;gap:12mm}
+.sh-specs .col{flex:1;min-width:0}
+table.sheet{width:100%%;border-collapse:collapse}
+table.sheet td{padding:1.7mm 2mm;font-size:8.5px;vertical-align:middle}
+table.sheet tr.alt td{background:rgba(0,0,0,.032)}
+table.sheet td.ic{width:5.6mm;padding-right:0}
+table.sheet td.k{opacity:.86}
+table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
+.sh-typ{position:absolute;top:206mm;left:14.03mm;width:181.94mm}
+.typ-row{display:flex;justify-content:space-between;gap:2mm;margin-top:5mm}
+.typ{width:20.4mm;text-align:center}
+.typ-a{width:17mm;height:17mm;margin:0 auto;overflow:hidden}
+.typ-l{margin-top:2.2mm;font-size:6.4px;font-weight:500;color:%(red)s;line-height:1.26}
+.sh-cards{position:absolute;top:247mm;left:14.07mm;width:181.86mm;display:grid;
+          grid-template-columns:repeat(4,1fr);gap:3.2mm}
+.card{background:rgba(0,0,0,.032);border-radius:2.2mm;padding:4mm 3.6mm}
+.card-t{font-size:12.5px;font-weight:500;color:%(red)s;line-height:1.1}
+.card-b{font-size:6.6px;opacity:.72;margin-top:1.4mm;line-height:1.3}
+.sh-foot{position:absolute;top:272mm;left:14.03mm;width:181.94mm;display:flex;
+         align-items:center;justify-content:space-between}
+.sh-cert{display:flex;align-items:center;gap:3.2mm;background:rgba(0,0,0,.032);
+         border-radius:2.2mm;padding:2.4mm 3.6mm}
+.sh-cert-t{font-size:8.6px;font-weight:700;line-height:1.16}
+.sh-cert-t i{color:%(red)s;font-style:normal}
+.sh-marks{display:flex;align-items:center;gap:2.4mm}
+.sh-contact{font-size:8.2px;opacity:.82}
+</style>
+""" % {"ink": ink, "red": red, "warm": warm, "reddark": TK.RED_ON_DARK}
+
+    return """
+<div class="page">
+  {pm}{css}
+  <div class="sh-mast"><div class="sh-glow"></div></div>
+  <div class="sh-rule"></div>
+  <div class="sh-logo">{logo}</div>
+  <div class="sh-name">{name}</div>
+  <div class="sh-chips">{chips}</div>
+  <div class="sh-hero">{hero}</div>
+  <div class="sh-body"><div class="h-sec">{ovt}</div><div class="body"><p>{ov}</p></div></div>
+  <div class="sh-hair" style="top:129.96mm"></div>
+  <div class="sh-specs">{t1}{t2}</div>
+  <div class="sh-hair" style="top:200.82mm"></div>
+  <div class="sh-typ"><div class="h-sec">{tyt}</div><div class="typ-row">{typ}</div></div>
+  <div class="sh-cards">{cards}</div>
+  <div class="sh-foot">
+    <div class="sh-cert">
+      <div class="sh-cert-t">CERTIFIED TO VERY HIGH<br/><i>GERMAN STANDARDS</i></div>
+      <div class="sh-marks">{cmarks}</div>
+    </div>
+    <div class="sh-contact">{contact}</div>
+  </div>
+</div>
+""".format(
+        pm=marks_html(ctx["marks"]), css=css,
+        logo=logo("horizontal-reversed", 11.2), name=name_html, chips=chips,
+        hero=img(images, b.get("hero", ""), style="width:100%;height:auto;display:block",
+                 label="product render"),
+        ovt=esc(b.get("overview_title", "Product Overview")),
+        ov=para(b.get("overview", "")),
+        t1=table(b.get("specs_title", "Technical Specifications"), b.get("specs", [])),
+        t2=table(b.get("performance_title", "Tested Performance"), b.get("performance", [])),
+        tyt=esc(b.get("typologies_title", "Typologies")), typ=typ, cards=cards, cmarks=marks,
+        contact=esc(b.get("contact", "www.sykon.ae  |  info@sykon.ae")),
+    )
+
+
 BLOCKS = {
+    "sheet": blk_sheet,
     "cover": blk_cover,
     "intro": blk_intro,
     "pillars": blk_pillars,
@@ -705,8 +875,10 @@ def resolve_images(cfg, image_dir):
     def walk(node):
         if isinstance(node, dict):
             for k, v in node.items():
-                if k in ("image", "drawing", "photo", "strip") and isinstance(v, str) and v:
+                if k in ("image", "drawing", "photo", "strip", "hero", "icon") and isinstance(v, str) and v:
                     keys.add(v)
+                elif k == "cert_marks" and isinstance(v, list):
+                    keys.update(x for x in v if isinstance(x, str) and x)
                 else:
                     walk(v)
         elif isinstance(node, list):

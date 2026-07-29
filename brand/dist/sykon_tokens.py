@@ -7,10 +7,12 @@
 
 RED           = "#C11720"
 RED_HOVER     = "#DC1A25"
+RED_ON_DARK   = "#DC1A25"   # large display type on dark only
 RED_TINT_29   = "#ECB4B7"
 RED_TINT_17   = "#F4CED0"
 RED_TINT_12   = "#F7D9DB"
 INK           = "#1C1C1A"
+PAGE          = "#FFFFFF"        # the catalogue page ground
 PAPER         = "#FEF4F4"
 PAPER_WARM    = "#F1E9E8"
 SURFACE_COOL  = "#F2F2F2"

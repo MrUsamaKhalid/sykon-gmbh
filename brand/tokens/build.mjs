@@ -69,6 +69,7 @@ const PAIRS = [
   ['red', 'ink', 'on_ink'],
   ['red-hover', 'paper', 'on_paper'],
   ['red-hover', 'ink', 'on_ink'],
+  ['red-on-dark', 'ink', 'on_ink'],
 ]
 for (const [fg, bg, key] of PAIRS) {
   const claimed = T.color[fg]?.contrast?.[key]
@@ -257,10 +258,12 @@ const py = `# ${BANNER.split('\n').join('\n# ')}
 
 RED           = "${T.color.red.value}"
 RED_HOVER     = "${T.color['red-hover'].value}"
+RED_ON_DARK   = "${T.color['red-on-dark'].value}"   # large display type on dark only
 RED_TINT_29   = "${T.color['red-tint-29'].value}"
 RED_TINT_17   = "${T.color['red-tint-17'].value}"
 RED_TINT_12   = "${T.color['red-tint-12'].value}"
 INK           = "${T.color.ink.value}"
+PAGE          = "${T.color.page.value}"        # the catalogue page ground
 PAPER         = "${T.color.paper.value}"
 PAPER_WARM    = "${T.color['paper-warm'].value}"
 SURFACE_COOL  = "${T.color['surface-cool'].value}"
