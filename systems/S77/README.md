@@ -20,9 +20,8 @@ Everything for this system lives in this folder.
 
 ## Sheet
 
-*(not written)*
+`content/s77-sheet.json`
 
 ## Missing
 
 - **sample boards** — no large-format section board
-- **sheet config** — the page has not been written yet

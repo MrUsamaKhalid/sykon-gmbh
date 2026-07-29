@@ -650,8 +650,12 @@ def blk_sheet(b, images, ctx):
         )
 
     def table(title, rows):
+        # An empty column, not nothing. S50 and SL350 have no tested
+        # performance, and dropping the second column outright let the first
+        # stretch the full 182mm — a four-row table with a metre of white
+        # between label and value.
         if not rows:
-            return ""
+            return '<div class="col"></div>'
         tr = ""
         for i, r in enumerate(rows):
             icon = r.get("icon", "")
@@ -700,10 +704,16 @@ def blk_sheet(b, images, ctx):
 
     css = """
 <style>
-.sh-mast{position:absolute;top:0;left:0;width:100%%;height:64.94mm;background:%(ink)s;overflow:hidden}
+/* The masthead and its rule are full-bleed and stay on the media box. Every
+   other element sits inside .sh-trim, whose origin is the TRIM corner.
+   Positioning them all on .page put the print build's 14.03mm margin 14.03mm
+   from the bleed edge — 11.03mm once trimmed — so the press copy and the
+   digital copy did not agree on where the type area was. */
+.sh-mast{position:absolute;top:0;left:0;width:100%%;height:%(masth)smm;background:%(ink)s;overflow:hidden}
 .sh-glow{position:absolute;left:50%%;top:20mm;width:76mm;height:76mm;margin-left:-38mm;border-radius:50%%;
          background:radial-gradient(closest-side,rgba(193,23,32,.32),rgba(193,23,32,0))}
-.sh-rule{position:absolute;top:64.94mm;left:0;width:100%%;height:1.73mm;background:%(red)s}
+.sh-rule{position:absolute;top:%(masth)smm;left:0;width:100%%;height:1.73mm;background:%(red)s}
+.sh-trim{position:absolute;top:%(b)smm;left:%(b)smm;width:%(tw)smm;height:%(th)smm}
 .sh-logo{position:absolute;top:12.7mm;left:14.2mm;height:11.2mm;z-index:3}
 .sh-name{position:absolute;top:28.4mm;left:14.2mm;font-size:44px;font-weight:500;line-height:1.05;
          letter-spacing:-.02em;color:%(warm)s;z-index:3}
@@ -712,12 +722,27 @@ def blk_sheet(b, images, ctx):
 .sh-name b{color:%(reddark)s;font-weight:500}
 .sh-sub{position:absolute;top:47mm;left:14.2mm;font-size:12.5px;font-weight:300;
         color:%(warm)s;opacity:.78;letter-spacing:.005em;z-index:3}
-.sh-chips{position:absolute;top:53.5mm;left:14.1mm;display:flex;gap:8mm;z-index:3}
-.chip{display:flex;align-items:center;gap:2.2mm}
+/* Bounded, and the chips share the width evenly. S60's chip values are two
+   words; SL450's is "Multi-level sealing system". An unbounded flex row sized
+   itself to the longest of them and pushed the last chip off the page. */
+.sh-chips{position:absolute;top:53.5mm;left:14.1mm;width:181.9mm;display:flex;
+          gap:5mm;align-items:flex-start;z-index:3}
+.chip{display:flex;align-items:flex-start;gap:2.2mm;flex:1 1 0;min-width:0}
 .chip-i{width:7.3mm;height:7.6mm;border-radius:1.6mm;background:%(red)s;flex:0 0 auto;padding:1.4mm}
-.chip-a{font-size:8.6px;font-weight:700;color:%(warm)s;line-height:1.14}
+.chip-a{font-size:8.6px;font-weight:700;color:%(warm)s;line-height:1.14;overflow-wrap:break-word}
 .chip-c{font-size:6.2px;color:%(warm)s;opacity:.62;line-height:1.26;margin-top:.3mm}
-.sh-hero{position:absolute;top:5mm;right:-3mm;width:72mm;z-index:2}
+/* Height-bounded, not width-bounded. The render is a light grey object on a
+   dark masthead, and at 72mm wide a 1.18 aspect ratio put its bottom edge at
+   66mm — straight through the chip band, leaving #F1E9E8 chip text sitting on
+   #969696 render at 2.47:1. Capping the height keeps it clear of the band; the
+   width follows from the aspect and is never the thing that has to give. */
+.sh-hero{position:absolute;top:3.5mm;right:6mm;height:48mm;z-index:2;
+         display:flex;align-items:flex-start;justify-content:flex-end}
+/* Every render is trimmed to its own ink, so bleeding one off the right edge
+   cuts the product in half rather than reading as a crop. It sits inside the
+   trim instead. The proof plate needs a width of its own — "width:auto" on a
+   flex box collapses it and clips the label. */
+.sh-hero .plate{width:52mm;height:100%%;padding:0 3mm;text-align:center}
 .h-sec{font-size:17px;font-weight:500;color:%(red)s;letter-spacing:-.006em;margin-bottom:4.4mm}
 .sh-body{position:absolute;top:74mm;left:14.03mm;width:106mm}
 .sh-body ul.sy{margin-top:4.4mm}
@@ -757,13 +782,16 @@ table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
 .sh-marks{display:flex;align-items:center;gap:2.4mm}
 .sh-contact{font-size:8.2px;opacity:.82}
 </style>
-""" % {"ink": ink, "red": red, "warm": warm, "reddark": TK.RED_ON_DARK}
+""" % {"ink": ink, "red": red, "warm": warm, "reddark": TK.RED_ON_DARK,
+       "b": ctx["bleed"], "tw": TK.PAGE_W_MM, "th": TK.PAGE_H_MM,
+       "masth": round(64.94 + ctx["bleed"], 3)}
 
     return """
 <div class="page">
   {pm}{css}
   <div class="sh-mast"><div class="sh-glow"></div></div>
   <div class="sh-rule"></div>
+  <div class="sh-trim">
   <div class="sh-logo">{logo}</div>
   <div class="sh-name">{name}</div>
   {sub}
@@ -785,11 +813,13 @@ table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
   <div class="sh-foot">
     <div class="sh-contact">{contact}</div>
   </div>
+  </div>
 </div>
 """.format(
         pm=marks_html(ctx["marks"]), css=css,
         logo=logo("horizontal-reversed", 11.2), name=name_html, chips=chips,
-        hero=img(images, b.get("hero", ""), style="width:100%;height:auto;display:block",
+        hero=img(images, b.get("hero", ""),
+                 style="height:100%;width:auto;max-width:92mm;object-fit:contain;display:block",
                  label="product render"),
         sub=('<div class="sh-sub">%s</div>' % esc(b["system_subtitle"])
              if b.get("system_subtitle") else ""),

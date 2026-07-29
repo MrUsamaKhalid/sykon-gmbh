@@ -22,8 +22,8 @@ Everything for this system lives in this folder.
 
 ## Sheet
 
-*(not written)*
+`content/sy50-sheet.json`
 
 ## Missing
 
-- **sheet config** — the page has not been written yet
+*(nothing — this system is complete)*

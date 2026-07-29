@@ -24,8 +24,8 @@ Everything for this system lives in this folder.
 
 ## Sheet
 
-*(not written)*
+`content/sl580-sheet.json`
 
 ## Missing
 
-- **sheet config** — the page has not been written yet
+*(nothing — this system is complete)*

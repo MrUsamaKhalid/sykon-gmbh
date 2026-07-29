@@ -6,11 +6,23 @@
 items, file map, session log. Read it before doing anything. When a decision
 gets made, record it there, not in chat.
 
-## CURRENT MODE: BUILD — S60 spec sheet
+## CURRENT MODE: REVIEW — ten spec sheets, awaiting placements
 
-Intake is closed. Building the per-system product spec sheet from
-`intake/materials/07-references/SAMPLE__USE_THIS.pdf`, as a data-driven block
-so all ten systems regenerate from one template. S60 first, approve, then scale.
+Intake is closed. All ten sheets build, pass the provenance gate and pass the
+layout verifier. What is outstanding is the client's input: where each drawing
+goes on the page.
+
+One command rebuilds everything:
+
+```bash
+python tools/scaffold_sheet.py --all     # .docx -> catalogue/examples/*.json
+python tools/build_all_sheets.py         # gate -> build -> verify -> questions
+```
+
+Never hand-edit a sheet config to add text. If a string is not in the `.docx`,
+it does not go on the page — and `scaffold_sheet.py` regenerates the file, so a
+hand edit is lost anyway. To change *what the document says*, fix the document.
+To change *which of it appears*, move rows between `pages[0]` and `_deferred`.
 
 If new material arrives mid-build: save it under `intake/materials/`, log it in
 `intake/INTAKE_LOG.md`, and continue.
@@ -36,6 +48,11 @@ mark is the one claim on the page carrying legal weight.
 ```bash
 python tools/check_provenance.py catalogue/examples/<system>-sheet.json
 ```
+
+It resolves the document through `systems/<SYSTEM>/source/`, not by matching
+filenames. Filename matching had SL450 gated against the SL450s document —
+"SL450" is a prefix of "SL450S" — which is exactly the class of mistake that
+makes a printed figure belong to a different product.
 
 Run it before any build. It walks every printed string, matches it against the
 document by token sequence, and exits non-zero on anything untraceable. This is

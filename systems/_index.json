@@ -16,15 +16,13 @@
       "SL450S Monorail Board A1.pdf"
     ],
     "extracted": 26,
-    "content": null,
+    "content": "sl450s-sheet.json",
     "quadrants": [
       "SL450s 2 Panel Sliding with Flyscreen",
       "SL450s 3 Track Sliding Door",
       "SL450s Monorail with Flyscreen Sliding Door"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "SL350": {
     "designation": "SL350",
@@ -35,13 +33,12 @@
     "views": [],
     "drawings": [],
     "extracted": 0,
-    "content": null,
+    "content": "sl350-sheet.json",
     "quadrants": [],
     "missing": [
       "**drawing sheets** \u2014 no elevations, no 3D view, no section details",
       "**sample boards** \u2014 no large-format section board",
-      "**extracted artwork** \u2014 nothing to place on a sheet",
-      "**sheet config** \u2014 the page has not been written yet"
+      "**extracted artwork** \u2014 nothing to place on a sheet"
     ]
   },
   "SL450": {
@@ -58,13 +55,11 @@
       "SL450 Monorail Slide Only Board A1.pdf"
     ],
     "extracted": 9,
-    "content": null,
+    "content": "sl450-sheet.json",
     "quadrants": [
       "SL450"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "SL580": {
     "designation": "SL580",
@@ -83,15 +78,13 @@
       "SL580 Monorail Sliders Generic.pdf"
     ],
     "extracted": 27,
-    "content": null,
+    "content": "sl580-sheet.json",
     "quadrants": [
       "SL580 2 Panel Narrow Sliding Door",
       "SL580 2 Panel Sliding with Flyscreen",
       "SL580 Monorail Sliding Door"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "SL20": {
     "designation": "SL20",
@@ -110,13 +103,11 @@
       "SL20 Sample Board.pdf"
     ],
     "extracted": 9,
-    "content": null,
+    "content": "sl20-sheet.json",
     "quadrants": [
       "SL20"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "SY35": {
     "designation": "SY35",
@@ -132,14 +123,12 @@
       "SY35 Slim SCW Generic Board.pdf"
     ],
     "extracted": 18,
-    "content": null,
+    "content": "sy35-sheet.json",
     "quadrants": [
       "SY35 with Top Hung Window",
       "SY35 Top Hung Window Wall Fix"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "SY50": {
     "designation": "SY50",
@@ -156,14 +145,12 @@
       "SY50 with Vent Toggle Glazed 8+16+8.pdf"
     ],
     "extracted": 18,
-    "content": null,
+    "content": "sy50-sheet.json",
     "quadrants": [
       "SY50 Conventional Curtain Wall",
       "SY50 Structural Curtain Wall"
     ],
-    "missing": [
-      "**sheet config** \u2014 the page has not been written yet"
-    ]
+    "missing": []
   },
   "S77": {
     "designation": "S77",
@@ -176,13 +163,12 @@
     ],
     "drawings": [],
     "extracted": 9,
-    "content": null,
+    "content": "s77-sheet.json",
     "quadrants": [
       "S77 3+ 0 Folding Door"
     ],
     "missing": [
-      "**sample boards** \u2014 no large-format section board",
-      "**sheet config** \u2014 the page has not been written yet"
+      "**sample boards** \u2014 no large-format section board"
     ]
   },
   "S60": {
@@ -221,13 +207,12 @@
     "views": [],
     "drawings": [],
     "extracted": 0,
-    "content": null,
+    "content": "s50-sheet.json",
     "quadrants": [],
     "missing": [
       "**drawing sheets** \u2014 no elevations, no 3D view, no section details",
       "**sample boards** \u2014 no large-format section board",
-      "**extracted artwork** \u2014 nothing to place on a sheet",
-      "**sheet config** \u2014 the page has not been written yet"
+      "**extracted artwork** \u2014 nothing to place on a sheet"
     ]
   }
 }
