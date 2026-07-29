@@ -20,11 +20,10 @@ Everything for this system lives in this folder.
 
 ## Sheet
 
-*(not written)*
+`content/sl350-sheet.json`
 
 ## Missing
 
 - **drawing sheets** — no elevations, no 3D view, no section details
 - **sample boards** — no large-format section board
 - **extracted artwork** — nothing to place on a sheet
-- **sheet config** — the page has not been written yet

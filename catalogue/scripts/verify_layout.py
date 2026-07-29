@@ -162,6 +162,24 @@ def main():
                                    "".join(c["c"] for c in sp.get("chars", []))[:40]
                                    or sp.get("text", "")[:40])
                             )
+            # 6. the spec band's dead zone. On a sheet page the tables run to a
+            #    hairline at 207mm and "System Options" starts at 212mm, so the
+            #    strip between them is empty by construction. Text there means a
+            #    table grew past its band and is colliding with the section
+            #    below — which S60 did the moment its performance labels
+            #    started wrapping to three lines, and which no other check
+            #    notices because the type is still black on white.
+            if cfg["pages"][i].get("block") == "sheet":
+                lo, hi_y = (bleed + 207.5) * MM, (bleed + 211.5) * MM
+                for blk in page.get_text("dict")["blocks"]:
+                    for ln in blk.get("lines", []):
+                        y0, y1 = ln["bbox"][1], ln["bbox"][3]
+                        if y1 > lo and y0 < hi_y:
+                            txt = "".join(s["text"] for s in ln["spans"])[:40]
+                            fails.append(
+                                "%s p%d: a table overflows its band into the "
+                                "207-212mm gap — %r" % (label, i + 1, txt))
+
         doc.close()
 
     print("\n  verify: %s" % name)

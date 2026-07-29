@@ -213,6 +213,46 @@ def main():
         A("☐ keep  ☐ remove")
         A("")
 
+    # Rows the document supplies that the page had no room for. These are the
+    # decisions a reviewer actually has to make, so they come before the
+    # section-level coverage questions rather than padding the tail.
+    for item in cfg.get("_refused", []):
+        n += 1
+        A("**Q%d.** The document's **%s** row reads:" % (n, shown(item["label"])))
+        A("")
+        A("> %s" % item["value"])
+        A("")
+        A("It is **not printed** — %s. The sheet cannot carry this figure until "
+          "the document is corrected." % item["reason"])
+        A("")
+        A("☐ correct the document — the value is: ______________  ☐ leave it off")
+        A("")
+
+    for key, items in cfg.get("_deferred", {}).items():
+        where = {
+            "specs": "Technical Specifications",
+            "performance": "Tested Performance",
+            "specs_absent": "Technical Specifications (recorded as not available)",
+            "performance_absent": "Tested Performance (recorded as not available)",
+            "typologies": "System Options",
+            "segments": "Area of Usage",
+            "overview_list": "Product Overview bullets",
+            "overview_rest": "Product Overview, further paragraphs",
+        }.get(key, key)
+        for item in items:
+            n += 1
+            if isinstance(item, dict):
+                what = "**%s — %s**" % (shown(item.get("label", item.get("title", ""))),
+                                        shown(item.get("value", item.get("name", ""))))
+            else:
+                what = "**%s**" % shown(item)
+            A("**Q%d.** The document has %s under *%s*, but the page had no room "
+              "for it." % (n, what, where))
+            A("Does it need to be on the sheet?")
+            A("")
+            A("☐ leave it off  ☐ put it on — and drop: ______________________")
+            A("")
+
     for heading in coverage:
         if n >= TARGET:
             break
@@ -226,13 +266,17 @@ def main():
 
     A("---")
     A("")
+    n_deferred = sum(len(v) for v in cfg.get("_deferred", {}).values())
+    n_refused = len(cfg.get("_refused", []))
     A("%d questions — at least %d by design. %d traced claims, %d approved "
       "furniture items, " % (n, TARGET, len(traced), len(furniture)) +
-      "%d untraceable, %d document sections not used on the sheet."
-      % (len(unverified), len(coverage)))
+      "%d untraceable, %d refused, %d held back for space, %d document sections "
+      "not used on the sheet."
+      % (len(unverified), n_refused, n_deferred, len(coverage)))
     A("")
-    A("_%s_" % ("Every claim on the sheet has a question. Coverage questions "
-                "pad the count to %d." % TARGET))
+    A("_Every claim on the sheet has a question, and so does everything the "
+      "document supplied that the sheet left out. Section-level coverage "
+      "questions make up any shortfall against %d._" % TARGET)
 
 
     with open(dest, "w") as fh:

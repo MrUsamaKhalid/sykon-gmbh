@@ -46,6 +46,7 @@ import glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DOCX_DIR = os.path.join(ROOT, "intake", "materials", "01-catalogue-materials")
+SYSTEMS_DIR = os.path.join(ROOT, "systems")
 FURNITURE = os.path.join(ROOT, "catalogue", "references", "furniture.json")
 
 #: Config keys whose values are printed on the page. Anything not listed here is
@@ -96,14 +97,29 @@ def docx_tokens(path):
 
 
 def find_docx(system):
-    """Match a system designation to its catalogue material file."""
+    """Match a system designation to its catalogue material file.
+
+    systems/<SYSTEM>/source/ holds exactly one document per system, filed by
+    tools/organise_systems.py against an explicit pattern table. Ask it first.
+
+    The fallback that scans filenames is kept for a config written before a
+    system was organised, but it cannot be trusted on its own: "SL450" is a
+    prefix of "SL450S", so the shortest-stem rule resolved SL450 to the SL450s
+    document and would have gated one system against another's figures.
+    """
     want = re.sub(r"[^a-z0-9]", "", system.lower())
+    filed = glob.glob(os.path.join(SYSTEMS_DIR, system.upper(), "source", "*.docx"))
+    if filed:
+        return filed[0]
     best = None
     for f in glob.glob(os.path.join(DOCX_DIR, "*.docx")):
         stem = re.sub(r"[^a-z0-9]", "", os.path.basename(f).lower())
         stem = stem.replace("cataloguematerial", "").replace("docx", "")
-        if stem.startswith(want) and (best is None or len(stem) < len(best[1])):
-            best = (f, stem)
+        # the character after the designation must not extend it: sl450s is a
+        # different system from sl450, not a longer spelling of it
+        if stem.startswith(want) and not stem[len(want):len(want) + 1].isalnum():
+            if best is None or len(stem) < len(best[1]):
+                best = (f, stem)
     return best[0] if best else None
 
 

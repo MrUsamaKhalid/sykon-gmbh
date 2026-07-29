@@ -5,13 +5,24 @@ Keep it current: when a decision is made, record it here, not in chat.
 
 ---
 
-## ACTIVE MODE: BUILD — S60 spec sheet
+## ACTIVE MODE: REVIEW — ten spec sheets, awaiting placements
 
-Intake closed at batch 08. Analysis authorised. Now building.
+Intake closed at batch 08. All ten sheets are built, gated and reviewable.
 
-**Current objective:** reproduce `SAMPLE__USE_THIS.pdf` as a data-driven block
-in the catalogue engine, populated with real S60 content, so the other nine
-systems regenerate from the same template. S60 gets approved first, then scale.
+**Where it stands:** every system has a config generated from its `.docx`, a
+print and digital PDF, and a reviewer question sheet. All ten pass the
+provenance gate and the layout verifier. The next input is the client's, not
+ours: exact placements for the drawings and artwork, and copy direction.
+
+```bash
+python tools/scaffold_sheet.py --all     # .docx -> catalogue/examples/*.json
+python tools/build_all_sheets.py         # gate -> build -> verify -> questions
+```
+
+`build_all_sheets.py` is the one command that matters. It refuses to render an
+untraceable sheet, then renders, measures the page, and trims any table row that
+overflows its band into `_deferred` — so the config ends up holding exactly what
+fits and the question sheet asks about everything it set aside.
 
 If more material arrives, fall back to the intake habit — save it under
 `intake/materials/`, log it in `intake/INTAKE_LOG.md`, and carry on.
@@ -126,6 +137,10 @@ non-thermal, SL450 lift-and-slide, SL450S, SL580, SY35, SY50.
 | `tools/build_logos.py` | Regenerates logo SVGs from the brand master PDF |
 | `tools/build_patterns.py` | Regenerates pattern SVGs |
 | `tools/organise_systems.py` | Rebuilds `systems/` from `intake/materials/` |
+| `tools/scaffold_sheet.py` | `.docx` → sheet config, quoting the document |
+| `tools/build_all_sheets.py` | **The build.** Gate → render → fit → questions |
+| `catalogue/review/` | One question sheet per system, for the reviewer |
+| `catalogue/out/` | Ten print + ten digital PDFs |
 | `systems/<SYSTEM>/` | Per system: `source/ views/ drawings/ extracted/ content/` |
 | `systems/_COVERAGE.md` | **What each system has and what it is missing** |
 | `systems/_shared/` | Range-wide artwork that belongs to no single system |
@@ -180,8 +195,23 @@ Source of truth for the brand: `MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf`,
 
 Waiting on the user:
 
-- [ ] **S60 sheet sign-off** — then scale the template to the other nine
-- [ ] **S50 and SL350 have zero artwork** — cannot produce a sheet until renders exist
+- [ ] **Placements** — which drawing, elevation or section goes where on each
+      sheet. Every system's artwork is cut and sitting in
+      `systems/<SYSTEM>/extracted/`; only the masthead hero is placed so far
+- [ ] **Sign-off on the ten sheets**, via `catalogue/review/<system>-questions.md`
+- [ ] **SL20 §2 water result is unpublishable as written** — the cell carries an
+      author's query ("I think this was 180 Pa only when tested??"). The row is
+      refused by `tools/scaffold_sheet.py` and will stay off the page until the
+      document is corrected
+- [ ] **S50 and SL350 have zero artwork** — their sheets build and read correctly
+      but the masthead carries a proof plate. Needs Revit models, or a decision
+      to publish them text-only
+- [ ] **`Thermal performance (Uf)` was trimmed off SY35 and SY50** for space. It
+      is the last row in both documents' tables and arguably the most valuable —
+      say which row it should displace
+- [ ] **Masthead chips have no icons.** The nine performance icons supplied map
+      to the *Tested Performance* rows (ASTM E330/E331, acoustic, thermal
+      cycling), not to depth / material / glazing / sealing
 - [ ] **Unresolved author queries** in SL20 (§2 water result) and S77 (§16 limitations)
       — must be settled before those systems publish. See `catalogue/references/SOURCE_AUDIT.md`
 - [ ] **Full catalogue file** — real content and system data
@@ -210,7 +240,8 @@ Waiting on the user:
 | Pattern SVGs | Done |
 | Fonts | Done |
 | Catalogue engine + verifier | Done — all examples build and pass all checks |
-| **S60 product spec sheet** | **Done** — reproduces the sample layout, all figures from the `.docx` |
+| **All ten product spec sheets** | **Built and gated** — provenance, layout and question sheet green on every one |
+| Reviewer question sheets | 40–70 questions per system in `catalogue/review/` |
 | Typology symbols | 53 named + normalised to `brand/assets/typologies/` |
 | Repo skill + references | Done |
 | Living docs site (`brand/docs/index.html`) | **Not built yet** |
@@ -240,3 +271,14 @@ Newest last. One line per meaningful event.
   missing. 16/16 3D quadrant renders now land in the right system; `SL20` and
   `SL450` were being dropped by a caption minimum-length guard. Confirmed **S50
   and SL350 have no artwork anywhere in intake** — not a matching failure.
+- Scaffolded all ten sheet configs from the `.docx` files and built them. Three
+  real defects surfaced and were fixed: the print PDF positioned its type area
+  from the bleed edge instead of the trim, so press and digital disagreed by 3mm;
+  long chip values ran under the light hero at 2.4:1; and S60's performance table
+  overflowed its band into the System Options heading. `verify_layout.py` now
+  fails on that last one, and `build_all_sheets.py` renders, measures and trims
+  to fit rather than guessing a row count.
+- `check_provenance.find_docx` resolved **SL450 to the SL450s document** —
+  "SL450" is a prefix of "SL450S" and the shortest-stem rule preferred the wrong
+  one. It would have gated one system against another's figures. Now it asks
+  `systems/<SYSTEM>/source/` first.
