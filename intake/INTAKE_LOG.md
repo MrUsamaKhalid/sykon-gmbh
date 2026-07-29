@@ -26,7 +26,7 @@ For each batch:
 |---|---|---|---|---|
 | 01 | 2026-07-29 | Catalogue materials — system .docx | 10 | Per-system source content, 15MB |
 | — | 2026-07-29 | SY Families (`.rfa` / `.rvt`) | ~19 | **PARKED** — not uploaded. See below |
-| 02 | — | *(expected)* PDF — different views | — | |
+| 02 | 2026-07-29 | PDF views — per-system drawings | 22 | Numbered 000–020, 14MB |
 
 ---
 
@@ -52,6 +52,38 @@ For each batch:
 | `SL 580 Catalogue material_.docx` | SL 580 |
 | `SY 35 Catalogue material_.docx` | SY 35 |
 | `SY 50 Catalogue material_.docx` | SY 50 |
+
+Not opened. Contents unexamined pending "Analyze now".
+
+### Batch 02 — PDF views
+
+`intake/materials/02-pdf-views/PDF Views/` — 22 files, 14MB, from
+`PDF_Views.zip`. Numbered `000`–`020`, sequence matching batch 01's systems.
+
+| # | File | System |
+|---|---|---|
+| 000 | Starting View | — |
+| 001 | S60 Side Hung Window | S 60 |
+| 002 | S60 Single Hinged Door Open Out | S 60 |
+| 002 | S60 Single Hinged Door Open Out **_compressed** | S 60 — duplicate, compressed |
+| 003 | S60 Single Hinged Door Open In | S 60 |
+| 004 | S77 3+0 Folding Door | S 77 |
+| 005 | SL20 | SL 20 |
+| 006 | SL450 | SL 450 |
+| 007 | SL450s 2 Panel Sliding with Flyscreen | SL 450 S |
+| 008 | SL450s 3 Track Sliding Door | SL 450 S |
+| 009 | SL450s Monorail with Flyscreen Sliding Door | SL 450 S |
+| 010 | SL580 2 Panel Narrow Sliding Door | SL 580 |
+| 011 | SL580 2 Panel Sliding with Flyscreen | SL 580 |
+| 012 | SL580 Monorail Sliding Door | SL 580 |
+| 013 | SY35 Top Hung Window Wall Fix | SY 35 |
+| 014 | SY35 with Top Hung Window | SY 35 |
+| 015 | SY50 Conventional Curtain Wall | SY 50 |
+| 016 | SY50 Structural Curtain Wall | SY 50 |
+| 017–020 | Detailed 3D Views (×4) | — |
+
+Two files share the number `002` — one is a `_compressed` variant of the same
+view. Flag at analysis; do not resolve now.
 
 Not opened. Contents unexamined pending "Analyze now".
 
