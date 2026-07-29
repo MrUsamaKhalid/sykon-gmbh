@@ -1,160 +1,79 @@
 {
   "slug": "Sykon-S60-Spec-Sheet",
+  "system": "S60",
   "title": "SYKON S60 — Casement / Door System",
-  "_source": "Every figure below is taken from intake/materials/01-catalogue-materials/S60  Catalogue material_.docx, which the client has designated the source of truth. Nothing is carried over from SAMPLE__USE_THIS.pdf, whose figures are illustrative and largely unsupported — see catalogue/references/SOURCE_AUDIT.md.",
+
+  "_rule": "Every printed string below is quoted from intake/materials/01-catalogue-materials/S60  Catalogue material_.docx, the only source of fact. Section headings come from SAMPLE__USE_THIS.pdf, which supplies DESIGN only. The contact line is approved brand furniture. All three categories are enforced by tools/check_provenance.py, which fails the build on anything else.",
+  "_sections": "system_name §Heading 1 · overview §1 · chips §5 · specs §5 · performance §2 and §3 and §4 · typologies §16 System Options · segments §17 Area of Usage",
+
   "pages": [
     {
       "block": "sheet",
-      "system_name": "Superior| S60",
+      "system_name": "SYKON| S60",
+      "system_subtitle": "Casement / Door System",
       "hero": "s60-hero.png",
+
       "chips": [
-        {
-          "value": "60 mm",
-          "note": "System depth"
-        },
-        {
-          "value": "Casement / door",
-          "note": "System type"
-        },
-        {
-          "value": "24 / 28 mm",
-          "note": "Tested glazing"
-        },
-        {
-          "value": "EPDM",
-          "note": "Sealing system"
-        }
+        { "value": "60 mm", "note": "System depth" },
+        { "value": "Aluminium", "note": "Frame material" },
+        { "value": "24 mm / 28 mm", "note": "Tested glass thickness" },
+        { "value": "EPDM gaskets", "note": "Sealing system" }
       ],
+
       "overview_title": "Product Overview",
-      "overview": "The SYKON S60 is a 60 mm aluminium casement system built on aluminium composite profiles with EPDM gasket sealing.\n\nThe system covers casement windows in both inward and outward opening configurations, hinged doors, concealed sash configurations and co-planar door configurations — a single profile family across the full range of residential and commercial openings.\n\nSeven frame options, five sash options and a full set of transom, mullion and threshold profiles allow the system to be detailed consistently from a small window to an entrance door without leaving the family.",
+      "overview": "S60 is a 60 mm aluminium casement system.",
+      "overview_list_title": "The system includes:",
+      "overview_list": [
+        "Casement windows (inward and outward opening)",
+        "Hinged doors",
+        "Concealed sash configurations",
+        "Co-planar door configurations"
+      ],
+
       "specs_title": "Technical Specifications",
       "specs": [
-        {
-          "label": "System type",
-          "value": "Casement / hinged door"
-        },
-        {
-          "label": "System depth",
-          "value": "60 mm"
-        },
-        {
-          "label": "Frame material",
-          "value": "Aluminium"
-        },
-        {
-          "label": "Thermal construction",
-          "value": "Aluminium composite profiles"
-        },
-        {
-          "label": "Glazing type",
-          "value": "Double glazing"
-        },
-        {
-          "label": "Tested glass thickness",
-          "value": "24 / 28 mm"
-        },
-        {
-          "label": "Sealing system",
-          "value": "EPDM gaskets"
-        },
-        {
-          "label": "Frame profile options",
-          "value": "7"
-        }
+        { "label": "System type", "value": "Casement / hinged door system" },
+        { "label": "System depth", "value": "60 mm" },
+        { "label": "Frame material", "value": "Aluminium" },
+        { "label": "Thermal construction", "value": "Aluminium composite profiles" },
+        { "label": "Glazing type", "value": "Double glazing" },
+        { "label": "Tested glass thickness", "value": "24 mm / 28 mm" },
+        { "label": "Sealing system", "value": "EPDM gaskets" }
       ],
+
       "performance_title": "Tested Performance",
       "performance": [
-        {
-          "label": "Air permeability — EN 12207",
-          "value": "Class 4"
-        },
-        {
-          "label": "Watertightness — EN 12208",
-          "value": "Class 7A / 3A"
-        },
-        {
-          "label": "Wind resistance — EN 12210",
-          "value": "Class C3"
-        },
-        {
-          "label": "Air infiltration — ASTM E283",
-          "value": "2.5 m³/h·m² @ 75 Pa"
-        },
-        {
-          "label": "Static water — ASTM E331",
-          "value": "600 Pa, no ingress"
-        },
-        {
-          "label": "Wind, serviceability — ASTM E330",
-          "value": "1920 Pa"
-        },
-        {
-          "label": "Wind, safety — ASTM E330",
-          "value": "2880 Pa"
-        },
-        {
-          "label": "Test specimen",
-          "value": "Hinged door, 1000 × 2300 mm"
-        }
+        { "label": "Air permeability — EN 12207", "value": "Class 4" },
+        { "label": "Water tightness — EN 12208", "value": "Class 7A / Class 3A" },
+        { "label": "Wind resistance — EN 12210", "value": "Class C3" },
+        { "label": "Air infiltration — ASTM E283", "value": "Within 2.5 m³/h·m² @ 75 Pa" },
+        { "label": "Static water penetration — ASTM E331", "value": "600 Pa (no water ingress)" },
+        { "label": "Wind resistance – serviceability — ASTM E330", "value": "+1400 Pa / +1920 Pa" },
+        { "label": "Wind resistance – safety — ASTM E330", "value": "+2100 Pa / +2880 Pa" },
+        { "label": "Sample type", "value": "Hinged door" },
+        { "label": "Sample size", "value": "1000 × 2300 mm" }
       ],
-      "typologies_title": "Window & Door Typologies — Standard & Concealed Sash",
+
+      "typologies_title": "System Options",
       "typologies": [
-        {
-          "name": "Tilt & Turn|Single Light",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/C-Asset 126.svg"
-        },
-        {
-          "name": "Tilt & Turn|+ P.W.D.",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/C-Asset 125.svg"
-        },
-        {
-          "name": "Tilt & Turn|+ Side-Hung",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/C-Asset 124.svg"
-        },
-        {
-          "name": "Tilt & Turn|+ Fixed Light",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/C-Asset 122 (2).svg"
-        },
-        {
-          "name": "Side-Hung Door|Inward",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/B-Asset 107.svg"
-        },
-        {
-          "name": "Side-Hung Door|Outward",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/B-Asset 108.svg"
-        },
-        {
-          "name": "Top-Hung|Projected",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/B-Asset 111.svg"
-        },
-        {
-          "name": "Parallel|Opening",
-          "svg": "/home/user/sykon-gmbh/brand/assets/typologies/B-Asset 106.svg"
-        }
+        { "name": "Inward opening" },
+        { "name": "Outward opening" },
+        { "name": "Concealed sash" },
+        { "name": "Co-planar doors" },
+        { "name": "Storefront and entrance configurations" },
+        { "name": "Tilt & Turn" },
+        { "name": "Pull & Slide" },
+        { "name": "Structural Glazed Door" }
       ],
+
+      "segments_title": "Area of Usage",
       "segments": [
-        {
-          "title": "Residential",
-          "note": "Villas, apartments, townhouses"
-        },
-        {
-          "title": "Commercial",
-          "note": "Offices, retail, mixed-use"
-        },
-        {
-          "title": "Hospitality",
-          "note": "Hotels, resorts, leisure"
-        },
-        {
-          "title": "Institutional",
-          "note": "Schools, healthcare, public"
-        }
+        { "title": "Residential buildings" },
+        { "title": "Commercial buildings" },
+        { "title": "Entrance doors" },
+        { "title": "Window applications" }
       ],
-      "cert_marks": [
-        "cert-piv.png",
-        "cert-ift.png",
-        "cert-auf.png"
-      ],
+
       "contact": "www.sykon.ae  |  info@sykon.ae"
     }
   ]

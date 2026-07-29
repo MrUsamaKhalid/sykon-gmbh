@@ -667,20 +667,32 @@ def blk_sheet(b, images, ctx):
         return ('<div class="col"><div class="h-sec">%s</div>'
                 '<table class="sheet">%s</table></div>' % (esc(title), tr))
 
+    # A symbol is attached only where one honestly depicts that option. Where no
+    # match exists the cell carries its label alone — a mislabelled typology
+    # symbol in a technical catalogue is worse than an absent one.
     typ = ""
     for t in b.get("typologies", [])[:8]:
         p = t.get("svg", "")
         art = (svg_inline(p).replace("<svg ", '<svg style="width:100%;height:100%;display:block" ', 1)
-               if p and os.path.exists(p) else plate(t.get("name", "typology")))
+               if p and os.path.exists(p) else "")
         lbl = "<br/>".join(esc(x.strip()) for x in t.get("name", "").split("|"))
         typ += '<div class="typ"><div class="typ-a">%s</div><div class="typ-l">%s</div></div>' % (art, lbl)
 
     cards = ""
-    for s in b.get("segments", [])[:4]:
-        cards += ('<div class="card"><div class="card-t">%s</div><div class="card-b">%s</div></div>'
-                  % (esc(s.get("title", "")), esc(s.get("note", ""))))
+    for seg in b.get("segments", [])[:4]:
+        note = seg.get("note", "")
+        cards += ('<div class="card"><div class="card-t">%s</div>%s</div>'
+                  % (esc(seg.get("title", "")),
+                     '<div class="card-b">%s</div>' % esc(note) if note else ""))
 
-    marks = "".join(img(images, m, style="height:6.4mm;width:auto") for m in b.get("cert_marks", []))
+    # The overview list is the document's own bullets, quoted, not paraphrased.
+    ovlist = ""
+    items = b.get("overview_list", [])
+    if items:
+        lt = b.get("overview_list_title", "")
+        ovlist = ('<div class="sh-lt">%s</div>' % esc(lt) if lt else "") + \
+                 '<ul class="sy body">%s</ul>' % "".join(
+                     "<li>%s</li>" % esc(x) for x in items)
 
     name = b.get("system_name", "")
     name_html = ("%s<b>%s</b>" % tuple(esc(x) for x in name.split("|", 1))
@@ -698,7 +710,9 @@ def blk_sheet(b, images, ctx):
 /* Not `red`: on the ink masthead that measures 2.77:1, below even the
    large-text threshold. `red-on-dark` is the minimum lift clearing 3:1. */
 .sh-name b{color:%(reddark)s;font-weight:500}
-.sh-chips{position:absolute;top:49.6mm;left:14.1mm;display:flex;gap:8mm;z-index:3}
+.sh-sub{position:absolute;top:47mm;left:14.2mm;font-size:12.5px;font-weight:300;
+        color:%(warm)s;opacity:.78;letter-spacing:.005em;z-index:3}
+.sh-chips{position:absolute;top:53.5mm;left:14.1mm;display:flex;gap:8mm;z-index:3}
 .chip{display:flex;align-items:center;gap:2.2mm}
 .chip-i{width:7.3mm;height:7.6mm;border-radius:1.6mm;background:%(red)s;flex:0 0 auto;padding:1.4mm}
 .chip-a{font-size:8.6px;font-weight:700;color:%(warm)s;line-height:1.14}
@@ -706,28 +720,35 @@ def blk_sheet(b, images, ctx):
 .sh-hero{position:absolute;top:5mm;right:-3mm;width:72mm;z-index:2}
 .h-sec{font-size:17px;font-weight:500;color:%(red)s;letter-spacing:-.006em;margin-bottom:4.4mm}
 .sh-body{position:absolute;top:74mm;left:14.03mm;width:106mm}
+.sh-body ul.sy{margin-top:4.4mm}
+.sh-body ul.sy li{font-size:9.2px;line-height:1.5;margin-bottom:1.4mm}
+.sh-lt{margin-top:5mm;font-size:9.2px;font-weight:500}
 .sh-body .body{font-size:9.2px;line-height:1.62}
 .sh-body .body p+p{margin-top:3.2mm}
 .sh-hair{position:absolute;left:14.03mm;width:181.94mm;height:.18mm;background:rgba(0,0,0,.15)}
-.sh-specs{position:absolute;top:137mm;left:14.03mm;width:181.94mm;display:flex;gap:12mm}
+.sh-specs{position:absolute;top:136mm;left:14.03mm;width:181.94mm;display:flex;gap:12mm}
 .sh-specs .col{flex:1;min-width:0}
 table.sheet{width:100%%;border-collapse:collapse}
-table.sheet td{padding:1.7mm 2mm;font-size:8.5px;vertical-align:middle}
+table.sheet td{padding:1.5mm 2mm;font-size:8.2px;vertical-align:middle;line-height:1.25}
 table.sheet tr.alt td{background:rgba(0,0,0,.032)}
 table.sheet td.ic{width:5.6mm;padding-right:0}
 table.sheet td.k{opacity:.86}
 table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
-.sh-typ{position:absolute;top:206mm;left:14.03mm;width:181.94mm}
-.typ-row{display:flex;justify-content:space-between;gap:2mm;margin-top:5mm}
-.typ{width:20.4mm;text-align:center}
-.typ-a{width:17mm;height:17mm;margin:0 auto;overflow:hidden}
-.typ-l{margin-top:2.2mm;font-size:6.4px;font-weight:500;color:%(red)s;line-height:1.26}
-.sh-cards{position:absolute;top:247mm;left:14.07mm;width:181.86mm;display:grid;
+.sh-typ{position:absolute;top:212mm;left:14.03mm;width:181.94mm}
+.typ-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4mm;margin-top:4.4mm}
+.typ{display:flex;align-items:center;gap:2.4mm;background:rgba(0,0,0,.032);
+     border-radius:2mm;padding:2.2mm 3mm;min-height:8mm}
+.typ-a{width:8mm;height:8mm;flex:0 0 auto;overflow:hidden}
+.typ-a:empty{display:none}
+.typ-l{font-size:8px;font-weight:500;color:%(red)s;line-height:1.24}
+.sh-seg{position:absolute;top:246mm;left:14.03mm;width:181.94mm}
+.sh-cards{position:absolute;top:256mm;left:14.07mm;width:181.86mm;display:grid;
           grid-template-columns:repeat(4,1fr);gap:3.2mm}
-.card{background:rgba(0,0,0,.032);border-radius:2.2mm;padding:4mm 3.6mm}
-.card-t{font-size:12.5px;font-weight:500;color:%(red)s;line-height:1.1}
+.card{background:rgba(0,0,0,.032);border-radius:2.2mm;padding:3.8mm 3.6mm;
+      display:flex;align-items:center;min-height:12mm}
+.card-t{font-size:11.5px;font-weight:500;color:%(red)s;line-height:1.18}
 .card-b{font-size:6.6px;opacity:.72;margin-top:1.4mm;line-height:1.3}
-.sh-foot{position:absolute;top:272mm;left:14.03mm;width:181.94mm;display:flex;
+.sh-foot{position:absolute;top:277mm;left:14.03mm;width:181.94mm;display:flex;
          align-items:center;justify-content:space-between}
 .sh-cert{display:flex;align-items:center;gap:3.2mm;background:rgba(0,0,0,.032);
          border-radius:2.2mm;padding:2.4mm 3.6mm}
@@ -745,19 +766,23 @@ table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
   <div class="sh-rule"></div>
   <div class="sh-logo">{logo}</div>
   <div class="sh-name">{name}</div>
+  {sub}
   <div class="sh-chips">{chips}</div>
   <div class="sh-hero">{hero}</div>
-  <div class="sh-body"><div class="h-sec">{ovt}</div><div class="body"><p>{ov}</p></div></div>
+  <div class="sh-body"><div class="h-sec">{ovt}</div>
+    <div class="body"><p>{ov}</p></div>
+    {ovlist}
+  </div>
   <div class="sh-hair" style="top:129.96mm"></div>
   <div class="sh-specs">{t1}{t2}</div>
-  <div class="sh-hair" style="top:200.82mm"></div>
+  <div class="sh-hair" style="top:207mm"></div>
   <div class="sh-typ"><div class="h-sec">{tyt}</div><div class="typ-row">{typ}</div></div>
+  <div class="sh-seg"><div class="h-sec">{segt}</div></div>
   <div class="sh-cards">{cards}</div>
+  <!-- The certification badge and its PIV / ift / A|U|F marks are gone: no .docx
+       evidences them, and a certification mark is the one claim on this page
+       that carries legal weight. -->
   <div class="sh-foot">
-    <div class="sh-cert">
-      <div class="sh-cert-t">CERTIFIED TO VERY HIGH<br/><i>GERMAN STANDARDS</i></div>
-      <div class="sh-marks">{cmarks}</div>
-    </div>
     <div class="sh-contact">{contact}</div>
   </div>
 </div>
@@ -766,11 +791,15 @@ table.sheet td.v{text-align:right;font-weight:700;white-space:nowrap}
         logo=logo("horizontal-reversed", 11.2), name=name_html, chips=chips,
         hero=img(images, b.get("hero", ""), style="width:100%;height:auto;display:block",
                  label="product render"),
+        sub=('<div class="sh-sub">%s</div>' % esc(b["system_subtitle"])
+             if b.get("system_subtitle") else ""),
         ovt=esc(b.get("overview_title", "Product Overview")),
         ov=para(b.get("overview", "")),
+        ovlist=ovlist,
         t1=table(b.get("specs_title", "Technical Specifications"), b.get("specs", [])),
         t2=table(b.get("performance_title", "Tested Performance"), b.get("performance", [])),
-        tyt=esc(b.get("typologies_title", "Typologies")), typ=typ, cards=cards, cmarks=marks,
+        tyt=esc(b.get("typologies_title", "System Options")), typ=typ, cards=cards,
+        segt=esc(b.get("segments_title", "")),
         contact=esc(b.get("contact", "www.sykon.ae  |  info@sykon.ae")),
     )
 

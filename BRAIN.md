@@ -16,19 +16,28 @@ systems regenerate from the same template. S60 gets approved first, then scale.
 If more material arrives, fall back to the intake habit — save it under
 `intake/materials/`, log it in `intake/INTAKE_LOG.md`, and carry on.
 
-## SOURCE OF TRUTH — ordering
+## THE ONLY SOURCE OF FACT IS THE .DOCX
 
-When two sources disagree about a technical fact, this is the order:
+Not an ordering — a single source. **Every word, letter, symbol and figure on a
+catalogue page comes from that system's `.docx`.** The sample supplies DESIGN
+only. The portfolio, old brochure, drawings and emails are input, never fact.
+The old catalogue is a post-approval reference.
 
-1. **The 10 `.docx` files in `intake/materials/01-catalogue-materials/`.**
-   The user has stated these are the source of truth. A figure in a `.docx`
-   beats the same figure anywhere else — portfolio, old brochure, or the sample.
-2. Drawings and PDF views (Sujith's vector sections).
-3. The brand master, for anything visual.
-4. Portfolio and old brochure — mine for copy, but never let them override a
-   `.docx` number. They are being superseded.
+Two approved exceptions, in `catalogue/references/furniture.json`: the logo, and
+the contact line. The certification badge and PIV / ift / A|U|F marks were
+**removed** — no `.docx` evidences them and a certification mark carries legal
+weight.
 
-Never silently reconcile a conflict. Surface it.
+Enforced, not trusted:
+
+| Tool | Does |
+|---|---|
+| `tools/check_provenance.py` | Fails the build on any printed string not traceable to the document |
+| `tools/build_review_questions.py` | One question per claim, with its source section, for the reviewer |
+
+This exists because the first S60 sheet shipped contaminated — "Superior" in the
+product name, four invented segment descriptions, a certification badge, three
+certification marks. All from the sample. The rule alone did not catch it.
 
 ## People
 

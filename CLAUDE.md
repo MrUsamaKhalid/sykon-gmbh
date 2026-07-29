@@ -15,19 +15,44 @@ so all ten systems regenerate from one template. S60 first, approve, then scale.
 If new material arrives mid-build: save it under `intake/materials/`, log it in
 `intake/INTAKE_LOG.md`, and continue.
 
-## Source of truth, in order
+## The only source of fact is the .docx
 
-1. **The 10 `.docx` in `intake/materials/01-catalogue-materials/`** — the user
-   has stated these are authoritative. A figure there beats the same figure in
-   the portfolio, the old brochure, or the sample.
-2. Drawings / PDF views (vector sections from Sujith).
-3. The brand master, for anything visual.
-4. Portfolio and old brochure — copy source only. They are superseded and must
-   never override a `.docx` number.
+**Every word, letter, symbol and figure printed on a catalogue page must come
+from that system's `.docx` in `intake/materials/01-catalogue-materials/`.**
+Not the sample, not the portfolio, not the old brochure, not the drawings, not
+the emails. Those are input. They are not facts.
 
-**Never silently reconcile a conflict. Surface it.** Certification claims in
-particular: if the new content does not support a claim a legacy document makes,
-it does not go in.
+Two exceptions, both listed in `catalogue/references/furniture.json`, both
+approved explicitly by the client:
+
+- **Brand furniture** — the logo, and `www.sykon.ae | info@sykon.ae`.
+- **Design headings** — section titles taken from the sample, which supplies
+  DESIGN only. They label the page; they assert nothing about a product.
+
+Nothing else. The certification badge and the PIV / ift / A|U|F marks were
+removed for exactly this reason: no `.docx` evidences them, and a certification
+mark is the one claim on the page carrying legal weight.
+
+```bash
+python tools/check_provenance.py catalogue/examples/<system>-sheet.json
+```
+
+Run it before any build. It walks every printed string, matches it against the
+document by token sequence, and exits non-zero on anything untraceable. This is
+a gate, not advice — the first S60 sheet shipped with "Superior" in the product
+name and four invented segment descriptions, all from the sample. Good
+intentions did not catch that.
+
+```bash
+python tools/build_review_questions.py catalogue/examples/<system>-sheet.json
+```
+
+Writes `catalogue/review/<system>-questions.md` — one question per claim, each
+quoting the exact string, its slot on the sheet, and the section it traces to,
+so the reviewer confirms rather than hunts. Anything untraceable heads the file
+under **UNVERIFIED — DO NOT PUBLISH**.
+
+The old catalogue is a **post-approval** reference. It is not a source.
 
 ## Two binding requirements from Anthony (project lead)
 
