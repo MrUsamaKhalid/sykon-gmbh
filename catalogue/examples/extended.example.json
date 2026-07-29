@@ -1,4 +1,5 @@
 {
+  "_status": "LAYOUT SKELETON ONLY — NOT APPROVED CONTENT. Written before the .docx-only rule was established, and its copy, certification marks and segment descriptions have NOT been through tools/check_provenance.py. It exists to exercise the multi-page block library. Do not build a client-facing document from it until every string is re-sourced from the .docx catalogue materials.",
   "slug": "sykon-abs-systems-catalogue",
   "title": "Sykon Aluminium Building Systems — Systems Catalogue",
   "pages": [
@@ -8,9 +9,18 @@
       "deck": "From windows and doors to façades, panoramic sliding systems, and glazed roofs — engineered for reliability and long-term value.",
       "strip": "cover-extrusion.jpg",
       "products": [
-        { "name": "Casement window", "image": "profile-casement.png" },
-        { "name": "Sliding system", "image": "profile-sliding.png" },
-        { "name": "Curtain wall", "image": "profile-curtainwall.png" }
+        {
+          "name": "Casement window",
+          "image": "profile-casement.png"
+        },
+        {
+          "name": "Sliding system",
+          "image": "profile-sliding.png"
+        },
+        {
+          "name": "Curtain wall",
+          "image": "profile-curtainwall.png"
+        }
       ]
     },
     {
@@ -29,12 +39,30 @@
       "eyebrow": "What defines the system",
       "heading": "Engineered. Precise. Forward.",
       "items": [
-        { "title": "Standardised system concept", "body": "Profiles and accessories configured around one tried-and-tested concept, for precise compatibility and scalable detailing." },
-        { "title": "High-performance compliance", "body": "Engineered to meet advanced thermal insulation requirements and recognised classifications and standards." },
-        { "title": "Certified safety and reliability", "body": "Tested by German bodies and aligned with high safety benchmarks, including fire, smoke and security certifications." },
-        { "title": "Precision manufacturing", "body": "Profiles produced to strict tolerances, so fabrication and installation stay predictable and durable." },
-        { "title": "Modular flexibility", "body": "An adaptable kit-of-parts that supports multiple configurations without compromising performance." },
-        { "title": "Built for longevity", "body": "Materials and finishes chosen for lifecycle performance against time, climate and intensive use." }
+        {
+          "title": "Standardised system concept",
+          "body": "Profiles and accessories configured around one tried-and-tested concept, for precise compatibility and scalable detailing."
+        },
+        {
+          "title": "High-performance compliance",
+          "body": "Engineered to meet advanced thermal insulation requirements and recognised classifications and standards."
+        },
+        {
+          "title": "Certified safety and reliability",
+          "body": "Tested by German bodies and aligned with high safety benchmarks, including fire, smoke and security certifications."
+        },
+        {
+          "title": "Precision manufacturing",
+          "body": "Profiles produced to strict tolerances, so fabrication and installation stay predictable and durable."
+        },
+        {
+          "title": "Modular flexibility",
+          "body": "An adaptable kit-of-parts that supports multiple configurations without compromising performance."
+        },
+        {
+          "title": "Built for longevity",
+          "body": "Materials and finishes chosen for lifecycle performance against time, climate and intensive use."
+        }
       ]
     },
     {
@@ -42,12 +70,36 @@
       "eyebrow": "Product families",
       "heading": "One system concept, six applications.",
       "items": [
-        { "name": "Windows", "image": "fam-windows.png", "note": "Casement, tilt-and-turn and fixed lights across thermally broken series." },
-        { "name": "Doors", "image": "fam-doors.png", "note": "Entrance, internal and high-traffic configurations." },
-        { "name": "Façades", "image": "fam-facades.png", "note": "Stick-built curtain wall and unitised solutions." },
-        { "name": "Sliding", "image": "fam-sliding.png", "note": "Panoramic lift-and-slide with minimal interlocks." },
-        { "name": "Roofing", "image": "fam-roofing.png", "note": "Glazed roofs, skylights and conservatory systems." },
-        { "name": "Composite panel", "image": "fam-acp.png", "note": "A2 and FR-rated architectural cladding." }
+        {
+          "name": "Windows",
+          "image": "fam-windows.png",
+          "note": "Casement, tilt-and-turn and fixed lights across thermally broken series."
+        },
+        {
+          "name": "Doors",
+          "image": "fam-doors.png",
+          "note": "Entrance, internal and high-traffic configurations."
+        },
+        {
+          "name": "Façades",
+          "image": "fam-facades.png",
+          "note": "Stick-built curtain wall and unitised solutions."
+        },
+        {
+          "name": "Sliding",
+          "image": "fam-sliding.png",
+          "note": "Panoramic lift-and-slide with minimal interlocks."
+        },
+        {
+          "name": "Roofing",
+          "image": "fam-roofing.png",
+          "note": "Glazed roofs, skylights and conservatory systems."
+        },
+        {
+          "name": "Composite panel",
+          "image": "fam-acp.png",
+          "note": "A2 and FR-rated architectural cladding."
+        }
       ]
     },
     {
@@ -59,21 +111,57 @@
       "photo": "sk70-application.jpg",
       "specs_title": "Profile",
       "specs": [
-        { "label": "System depth, frame", "value": "70 mm" },
-        { "label": "System depth, vent", "value": "79 mm" },
-        { "label": "Thermal break", "value": "Polyamide 6.6, 24–34 mm" },
-        { "label": "Glazing thickness", "value": "up to 52 mm" },
-        { "label": "Max vent weight", "value": "160 kg" },
-        { "label": "Finishes", "value": "Powder coated, anodised, wood effect" }
+        {
+          "label": "System depth, frame",
+          "value": "70 mm"
+        },
+        {
+          "label": "System depth, vent",
+          "value": "79 mm"
+        },
+        {
+          "label": "Thermal break",
+          "value": "Polyamide 6.6, 24–34 mm"
+        },
+        {
+          "label": "Glazing thickness",
+          "value": "up to 52 mm"
+        },
+        {
+          "label": "Max vent weight",
+          "value": "160 kg"
+        },
+        {
+          "label": "Finishes",
+          "value": "Powder coated, anodised, wood effect"
+        }
       ],
       "performance_title": "Performance",
       "performance": [
-        { "label": "Thermal transmittance Uf", "value": "from 1.3 W/m²K" },
-        { "label": "Air permeability", "value": "Class 4, EN 12207" },
-        { "label": "Watertightness", "value": "Class E1050, EN 12208" },
-        { "label": "Wind load resistance", "value": "Class C5, EN 12210" },
-        { "label": "Burglar resistance", "value": "up to RC3, EN 1627" },
-        { "label": "Sound reduction", "value": "up to 47 dB" }
+        {
+          "label": "Thermal transmittance Uf",
+          "value": "from 1.3 W/m²K"
+        },
+        {
+          "label": "Air permeability",
+          "value": "Class 4, EN 12207"
+        },
+        {
+          "label": "Watertightness",
+          "value": "Class E1050, EN 12208"
+        },
+        {
+          "label": "Wind load resistance",
+          "value": "Class C5, EN 12210"
+        },
+        {
+          "label": "Burglar resistance",
+          "value": "up to RC3, EN 1627"
+        },
+        {
+          "label": "Sound reduction",
+          "value": "up to 47 dB"
+        }
       ]
     },
     {
@@ -95,10 +183,22 @@
       "heading": "Certified to very high German standards.",
       "body": "Sykon systems are tested and classified by recognised German institutes. Certification covers thermal performance, air and water tightness, wind load, burglar resistance, and fire and smoke protection.",
       "marks": [
-        { "name": "PIV", "image": "cert-piv.png" },
-        { "name": "ift Rosenheim", "image": "cert-ift.png" },
-        { "name": "A|U|F", "image": "cert-auf.png" },
-        { "name": "EN 14351-1", "image": "cert-en.png" }
+        {
+          "name": "PIV",
+          "image": "cert-piv.png"
+        },
+        {
+          "name": "ift Rosenheim",
+          "image": "cert-ift.png"
+        },
+        {
+          "name": "A|U|F",
+          "image": "cert-auf.png"
+        },
+        {
+          "name": "EN 14351-1",
+          "image": "cert-en.png"
+        }
       ]
     },
     {

@@ -1,0 +1,25 @@
+{
+  "_rule": "The only source of FACT is the system's .docx catalogue material. Everything a sheet prints must be traceable there, with exactly two exceptions, both listed below and both approved explicitly by the client. Nothing is added here without being asked for.",
+
+  "_decided": "2026-07-29 — client approved the logo and the contact line as brand furniture, and directed that the certification badge and the PIV / ift Rosenheim / A|U|F marks be removed entirely. A certification mark is a factual claim about the product; no .docx evidences one, and it is the item on the page that carries legal weight. catalogue/assets/cert-*.png stay on disk, referenced by nothing, so they can be reinstated the moment a document supports them.",
+
+  "furniture": [
+    "www.sykon.ae  |  info@sykon.ae"
+  ],
+
+  "_furniture_note": "The Sykon logo is furniture too, but it is artwork rather than a string, so it is not listed here — it enters through brand/assets/logo/ and is checked by the token build instead.",
+
+  "design_headings": [
+    "Product Overview",
+    "Technical Specifications",
+    "Tested Performance",
+    "System Options",
+    "Area of Usage"
+  ],
+
+  "_design_note": "Section headings come from SAMPLE__USE_THIS.pdf, which the client designated as the source for DESIGN. They label the page; they assert nothing about the product. Every heading here must either appear in the sample or be a verbatim .docx section title.",
+
+  "derived": [],
+
+  "_derived_note": "Values computed from the document rather than quoted from it. Each entry must carry the rule that produced it and the section it was computed from. Empty by design — 'Frame profile options: 7' was removed for being a count I derived rather than a stated fact."
+}
