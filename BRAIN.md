@@ -144,7 +144,7 @@ non-thermal, SL450 lift-and-slide, SL450S, SL580, SY35, SY50.
 | `systems/<SYSTEM>/` | Per system: `source/ views/ drawings/ extracted/ content/` |
 | `systems/_COVERAGE.md` | **What each system has and what it is missing** |
 | `systems/_shared/` | Range-wide artwork that belongs to no single system |
-| `.claude/skills/sykon-gmbh-catalogue/` | Repo-local skill |
+| `.usamatic/skills/sykon-gmbh-catalogue/` | Repo-local skill |
 
 Source of truth for the brand: `MASTERFILE_Sykon_ABS_GmbH__Brand_Identity.pdf`,
 34 pages, Adobe Illustrator 30.1.
@@ -247,7 +247,7 @@ Waiting on the user:
 | Living docs site (`brand/docs/index.html`) | **Not built yet** |
 | Real content wired in | Blocked on uploads |
 
-Branch: `claude/sykon-gmbh-design-system-4jnnt4`
+Branch: `usamatic/sykon-gmbh-design-system-4jnnt4`
 No PR — the repo was empty, so this branch is the only branch and the default.
 There is no base to open a PR against unless a `main` baseline is created.
 
